@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- LINEARICONS -->
+		<link rel="stylesheet" href="fonts/linearicons/style.css">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body  onload = "firstfocus();">
+
+		<div class="wrapper">
+			<div class="inner">
+				
+				<form action="register_script.php" method="POST" name="Register" >
+					<h3>New Account?</h3>
+					<div class="form-holder">
+						<span id="Ename" class="lnr lnr-user"></span>
+						<input type="text" class="form-control" placeholder="Name" name = "Name" onblur = "Naame()"  >
+						<label id = "Ename"> </label>
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-phone-handset" id="numloc"></span>
+						<input type="text" class="form-control" placeholder="Phone Number" name = "PhnNo" onchange = "Phone()" >
+						<label id = "EPhone"> </label> 
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-envelope"></span>
+						<input type="text" class="form-control" placeholder="Mail" name = "Email" onchange = "EMail()">
+						<label id = "Eemail"> </label>
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-lock"></span>
+						<input type="password" class="form-control" placeholder="Password" name = "pswrd" onchange = "Paswd()">
+						<label id = "EPword"> </label> 
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-lock"></span>
+						<input type="password" class="form-control" placeholder="Confirm Password" name = "CPword" onchange = "CPaswd()">
+						<label id = "EPword"> </label> 
+					</div>
+                    <div class="form-row p-t-20">
+                            
+                            <div class="p-t-15">
+                                <label class="radio-container m-r-55">Seller
+                                    <input type="radio" checked="checked" name="exist" value="seller">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">Buyer
+                                    <input type="radio" name="exist" value="buyer">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div><BR>
+<div class="form-holder">
+Already have an account?<a href = "../../LOGIN/log/login.html"><u> Sign in </u></a>
+</div>
+
+					 <button class="btn btn--radius-2 btn--red" type="submit" name="register-btn" onclick="matchPassword()">Register</button>
+
+				</form>
+				<img src="images/image-2.png" alt="" class="image-2">
+			</div>
+			
+		</div>
+		  
+
+		<script>
+		
+			function firstfocus()
+		   {
+			   var naame = document.Register.Name.focus();
+			   return true;
+		   }
+		   
+		   function Naame()
+		   {
+			   var naame = document.forms["Register"]["Name"]
+			   var letters = /^[A-Za-z]+$/;
+			   
+			   
+			   if(naame.value == "")
+			   {
+				   window.alert( "Please enter your name");
+				   document.getElementById("Ename").innerHTML = ename;
+				   naame.focus();
+				   return false;
+			   }
+			   
+			   else if(naame.value.match(letters))
+			   {
+				   
+				   
+					  document.getElementById("Ename").innerHTML = "";
+					  document.Register.PhnNo.focus();
+					  return true;
+			   }
+			   
+			   else
+			   {
+				window.alert( "Name must have alphabet characters only");
+				   PhnNo.focus();
+				   return false;
+			   }
+			   
+
+		   
+			   
+				   
+		   }
+		   
+		   
+		   
+		   
+		   
+		   
+		   function Phone()
+		   {
+			   var phone = document.forms["Register"]["PhnNo"];
+			   var phn = /[789][0-9]{9}/;
+			   
+			   if(phone.value == "")
+			   {
+				window.alert( "Please enter your phone no");
+				   phone.focus();
+				   return false;
+			   }
+			   
+			   else if(phone.value.match(phn))
+			   {
+				   document.getElementById("EPhone").innerHTML = "";
+				   document.Register.Email.focus();
+				   return true;
+			   }
+			   
+			   else
+			   {
+				window.alert( "Invalid Phone No");
+				   phone.focus();
+				   return false;
+				   
+			   }
+		   }
+		   
+
+		   function EMail()
+		   {
+			   var email = document.forms["Register"]["Email"];
+			   var mail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			   
+			   
+			   if(email.value == "")
+			   {
+				window.alert( "Please enter your email");
+				   email.focus();
+				   return false;
+			   }
+			   
+			   else if(email.value.match(mail))
+			   {
+				   document.getElementById("Eemail").innerHTML = "";
+				   document.Register.pswrd.focus();
+				   return true;
+			   }
+			   
+			   else
+			   {
+				window.alert( "Invalid Email");
+				   email.focus();
+				   return false;
+			   }
+		   }
+		   
+		   
+		   function Paswd()
+		   {
+			   var paswd = document.forms["Register"]["pswrd"];	
+			   var pwd = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+			   
+			   if(paswd.value == "")
+			   {
+				window.alert( "Please enter your password");
+				   paswd.focus();
+				   return false;
+			   }
+			   
+			   else if(paswd.value.match(pwd))
+			   {
+				   document.getElementById("EPword").innerHTML = "";
+				   document.Register.CPword.focus();
+				   return true;
+			   }
+			   
+			   else
+			   {
+				window.alert( "Invalid Password");
+				   paswd.focus();
+				   return false;
+			   }
+		   }
+		   
+		   function CPaswd()
+		   {
+			   var confirm = document.forms["Register"]["pswrd"];
+			   var cpaswd = document.forms["Register"]["CPword"];
+			   
+			   if(cpaswd.value == "")
+			   {
+				window.alert( "Please enter your password");
+				   cpaswd.focus();
+				   return false;
+			   }
+				   
+			   if(confirm.value == cpaswd.value)
+			   {
+				   
+				   //window.alert("Match");
+				   document.getElementById("EPword").innerHTML = "";
+				   document.Register.Tick.focus();
+				   return true;
+				   
+				   
+			   }
+			   
+			   else
+			   {
+				   window.alert( "Doesn't Match");
+				   cpaswd.focus();
+				   return false;
+				   
+				   
+			   }
+			   
+		   }
+		   
+		   
+		   function Tick()
+		   {
+			   document.Register.click.focus();
+					   }
+		   
+		   
+	   </script>
+		
+		
+		  
+			
+		
+	</body>
+</html>
