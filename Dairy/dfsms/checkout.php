@@ -1,5 +1,30 @@
 <?php
-require_once "dbconfig.php";
+require_once "includes/dbconfig.php";
+require_once "includes/config.php";
+
+session_start();
+if(empty($_SESSION['email']))
+ {
+     
+	header("location:../../LOGIN/log/login.html");
+	 
+    }
+   
+		$email=$_SESSION['email'];
+
+   
+   $query="select * from tbl_reg where email='$email'";
+   $result=mysqli_query($con,$query);
+   if(!$result)
+   {
+	   die("Error");
+   }
+   else
+   {
+    $userrow=mysqli_fetch_array($result);    
+	//print_r($row);die();
+	
+   } 
 
 $grand_total = 0;
 $allItems = "";
@@ -49,8 +74,8 @@ $allItems = implode(", ", $items);
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="dashboard.php">Home</a>
-     
+      <a class="navbar-brand" href="index.php">Home</a>
+      
 	  
       
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,19 +119,20 @@ $allItems = implode(", ", $items);
 				<input type="hidden" name="grand_total" value="<?php echo $grand_total ?>">
 				
 				<div class="form-group">
-					<input type="text" name="name" class="form-control" placeholder="enter name" required>
+				
+					<input type="text" name="name" class="form-control" placeholder="Enter name" value="<?php echo $userrow['name']; ?>" disabled required>
 				</div>	
 				
 				<div class="form-group">
-					<input type="email" name="email" class="form-control" placeholder="enter email" required>
+					<input type="email" name="email" class="form-control" placeholder="Enter email" value="<?php echo $userrow['email']; ?>" disabled required>
 				</div>
 				
 				<div class="form-group">
-					<input type="tel" name="phone" class="form-control" placeholder="enter phone" required>
+					<input type="tel" name="phone" class="form-control" placeholder="Enter phone" value="<?php echo $userrow['phno']; ?>"   required>
 				</div>
 				
 				<div class="form-group">
-					<textarea name="address" class="form-control" rows="3" cols="10" placeholder="enter address"></textarea>
+					<textarea name="address" class="form-control" rows="3" cols="10" placeholder="Enter address"></textarea>
 				</div>
 				
 				<h6 class="text-center lead">Select Payment Mode</h6>
@@ -169,6 +195,8 @@ $allItems = implode(", ", $items);
 	
 	});
   </script>
+
+
 
 </body>
 

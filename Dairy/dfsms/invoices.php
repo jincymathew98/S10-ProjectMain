@@ -2,9 +2,9 @@
 session_start();
 //error_reporting(0);
 include('includes/config.php');
-if (strlen($_SESSION['aid']==0)) {
-  header('location:logout.php');
-  } else{
+// if (strlen($_SESSION['aid']==0)) {
+//   header('location:logout.php');
+//   } else{
 // Code for deletion   
 if(isset($_GET['del'])){    
 $cmpid=substr(base64_decode($_GET['del']),0,-5);
@@ -115,9 +115,6 @@ $cnt++;
             </div>
             <!-- /Container -->
 
-            <!-- Footer -->
-<?php include_once('includes/footer.php');?>
-            <!-- /Footer -->
         </div>
         <!-- /Main Content -->
     </div>
@@ -147,4 +144,3 @@ $cnt++;
     <script src="dist/js/init.js"></script>
 </body>
 </html>
-<?php } ?>

@@ -137,7 +137,8 @@ include_once('includes/sidebar.php');
 					<input type="hidden" class="pprice" value="<?php echo $row['product_price']; ?>">
 					<input type="hidden" class="pimage" value="<?php echo $row['product_image']; ?>">
 					<input type="hidden" class="pcode" value="<?php echo $row['product_code']; ?>">
-					<button id="addItem" class="btn btn-success btn-md">Add to Cart</button>
+					<button id="addItem" class="btn btn-success btn-md">Add to Cart</button><br>
+          <a href="feedback.html"><U>See more</U></a>
 				</form>
               </div>
 			  
