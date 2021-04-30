@@ -30,21 +30,21 @@ $con=mysqli_connect("localhost","root","","test");
 					header("location:../../ADMIN/admin/admin.php");
 					
 				}
-				elseif($usertype == "buyer")
+				elseif($usertype == "user")
 				{
 					
 					
-					header("location:../../BUYER/addtocart/index.php");
+					header("location:../../Dairy/dfsms/dashboard.php");
 
 				}
-				elseif($usertype == "seller")
-				{
-					header("location:../../SELLER/seller/seller.php");
-				}
-				else
-				{
-					header('location: login.html');
-				}
+				// elseif($usertype == "seller")
+				// {
+				// 	header("location:../../SELLER/seller/seller.php");
+				// }
+				// else
+				// {
+				// 	header('location: login.html');
+				// }
 	} 
 		else 
         {

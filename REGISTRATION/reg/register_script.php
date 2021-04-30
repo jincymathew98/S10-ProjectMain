@@ -6,9 +6,9 @@ $Name = mysqli_real_escape_string($con, $_POST['Name']);
 $Email = mysqli_real_escape_string($con, $_POST['Email']);
 $PhnNo = mysqli_real_escape_string($con, $_POST['PhnNo']);
 $CPword = md5(mysqli_real_escape_string($con, $_POST['CPword']));
-$usertype = mysqli_real_escape_string($con, $_POST['exist']);
+//$usertype = mysqli_real_escape_string($con, $_POST['exist']);
 $submit = mysqli_real_escape_string($con, $_POST['register-btn']);
-
+$usertype="user";
 
 
 
@@ -22,7 +22,7 @@ if(mysqli_num_rows($result)<1)
 
 
 
-$sql="insert into tbl_login (email,p_swrd,usertype,status) values('$Email','$CPword','$usertype',1)";
+$sql="insert into tbl_login (email,p_swrd,usertype,status) values('$Email','$CPword','user',1)";
 if(mysqli_query($con,$sql))
 {
 	$n = mysqli_insert_id($con);
