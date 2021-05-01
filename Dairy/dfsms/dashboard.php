@@ -85,7 +85,7 @@ include_once('includes/sidebar.php');
         <div class="row">
 		
 		<?php
-		require_once "dbconfig.php";
+		require_once "includes/dbconfig.php";
 		$select_stmt=$db->prepare("SELECT * FROM product");	
 		$select_stmt->execute();
 		while($row=$select_stmt->fetch(PDO::FETCH_ASSOC))

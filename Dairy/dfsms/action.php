@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "dbconfig.php";
+require_once "includes/dbconfig.php";
 
 if(isset($_POST["pid"]) && isset($_POST["pname"]) && isset($_POST["pprice"]) && isset($_POST["pimage"]) && isset($_POST["pcode"]))
 {

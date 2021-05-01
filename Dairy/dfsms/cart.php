@@ -121,7 +121,7 @@ include_once('includes/sidebar.php');
                     </thead>
                     <tbody>
 						<?php
-						require_once "dbconfig.php";
+						require_once "includes/dbconfig.php";
 						$select_stmt=$db->prepare("SELECT * FROM cart");
 						$select_stmt->execute();
 						$grand_total = 0;
