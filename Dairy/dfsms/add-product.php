@@ -2,26 +2,13 @@
 session_start();
 //error_reporting(0);
 include('includes/config.php');
-// if (!strlen($_SESSION['aid']==0)) 
-//   header('location:logout.php');
-//  
+include('../../resetpassword/mailFunctions.php');
+if (!isset($_SESSION['email'])) 
+
+  header('location:logout.php');
+ 
 // Add product Code
-if(isset($_POST['submit']))
-{
-//Getting Post Values
-$catname=$_POST['category']; 
-$company=$_POST['company'];   
-$pname=$_POST['productname'];
-$pprice=$_POST['productprice'];
-$query=mysqli_query($con,"insert into tblsell(CategoryName,CompanyName,ProductName,ProductPrice) values('$catname','$company','$pname','$pprice')"); 
-if($query){
-echo "<script>alert('Product added successfully.');</script>";   
-echo "<script>window.location.href='add-product.php'</script>";
-} else{
-echo "<script>alert('Something went wrong. Please try again.');</script>";   
-echo "<script>window.location.href='add-product.php'</script>";    
-}
-}
+
 
     ?>
 <!DOCTYPE html>
@@ -60,7 +47,7 @@ include_once('includes/sidebar.php');
             <nav class="hk-breadcrumb" aria-label="breadcrumb">
                 <ol class="breadcrumb breadcrumb-light bg-transparent">
 <li class="breadcrumb-item"><a href="#">Product</a></li>
-<li class="breadcrumb-item active" aria-current="page">Add</li>
+<li class="breadcrumb-item active" aria-current="page">Sell</li>
                 </ol>
             </nav>
             <!-- /Breadcrumb -->
@@ -81,35 +68,70 @@ include_once('includes/sidebar.php');
 
 <div class="row">
 <div class="col-sm">
-<form class="needs-validation" method="post" novalidate>
+<form class="needs-validation" method="post" action="sell.php">
                                        
 <div class="form-row">
 <div class="col-md-6 mb-10">
 <label for="validationCustom03">Email</label>
-<input type="email" class="form-control">
+<input type="email" class="form-control" name="email" value="<?php echo $_SESSION['email'];?>" disabled>
 </div>
 </div>
 
 <div class="form-row">
 <div class="col-md-6 mb-10">
 <label for="validationCustom03">Product Name</label>
-<input type="text" class="form-control">
-</div>
-</div>
+<?php
+  require_once "includes/config.php";
+  $query="select Productname,ProductPrice from tbl_products where ProductID=29";
+  $result=mysqli_query($con,$query);
+  if(!$result)
+  {
+      die("error");
+  }
+  elseif(!mysqli_num_rows($result))  
+  {
+      die("DB Error");
+  }
 
- 
+  $row=mysqli_fetch_array($result);
+?>
+
+<script>
+
+    function calculateprice()
+     {
+         rate=<?php echo $row['ProductPrice']; ?>;
+         litres=parseInt(document.getElementById('litres_cal').value);
+         price=rate*litres;
+         console.log(typeof(rate))
+         console.log(typeof(litres))
+         console.log(typeof(price))
+         document.getElementById('milk_price').value=price;
+         
+     }
+     </script>
+<input type="text" class="form-control" name="name" disabled value="<?php echo $row['Productname']; ?>" > 
+</div>
+</div>
 
 <div class="form-row">
 <div class="col-md-6 mb-10">
-<label for="validationCustom03">Product Price</label>
-<input type="text" class="form-control" >
+<label for="validationCustom03">Quantity(in litres)</label>
+<input type="number" class="form-control" name="quantity" min="1" onInput="calculateprice()" id="litres_cal">
+</div>
+</div>
+
+<div class="form-row">
+<div class="col-md-6 mb-10">
+<label for="validationCustom03"  >Product Price( <?php echo $row['ProductPrice']; ?> Rs. per litre)</label>
+<input type="number" class="form-control" name="price"  id="milk_price" disabled >
 </div>
 </div>
 
 <div class="form-row">
 <div class="col-md-6 mb-10">
 <label for="validationCustom03">Date of selling</label>
-<input type="date" class="form-control" >
+<input type="date" class="form-control" name="date" value="<?php echo current_time(); ?>">
 </div>
 </div>
 
@@ -132,6 +154,8 @@ include_once('includes/sidebar.php');
 
     </div>
 
+
+
     <script src="vendors/jquery/dist/jquery.min.js"></script>
     <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
     <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -144,5 +168,7 @@ include_once('includes/sidebar.php');
     <script src="dist/js/init.js"></script>
     <script src="dist/js/validation-data.js"></script>
 
+
+    
 </body>
 </html>
