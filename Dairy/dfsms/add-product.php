@@ -2,9 +2,9 @@
 session_start();
 //error_reporting(0);
 include('includes/config.php');
-if (strlen($_SESSION['aid']==0)) {
-  header('location:logout.php');
-  } else{
+// if (!strlen($_SESSION['aid']==0)) 
+//   header('location:logout.php');
+//  
 // Add product Code
 if(isset($_POST['submit']))
 {
@@ -13,7 +13,7 @@ $catname=$_POST['category'];
 $company=$_POST['company'];   
 $pname=$_POST['productname'];
 $pprice=$_POST['productprice'];
-$query=mysqli_query($con,"insert into tblproducts(CategoryName,CompanyName,ProductName,ProductPrice) values('$catname','$company','$pname','$pprice')"); 
+$query=mysqli_query($con,"insert into tblsell(CategoryName,CompanyName,ProductName,ProductPrice) values('$catname','$company','$pname','$pprice')"); 
 if($query){
 echo "<script>alert('Product added successfully.');</script>";   
 echo "<script>window.location.href='add-product.php'</script>";
@@ -76,6 +76,7 @@ include_once('includes/sidebar.php');
                 <!-- Row -->
                 <div class="row">
                     <div class="col-xl-12">
+
 <section class="hk-sec-wrapper">
 
 <div class="row">
@@ -84,52 +85,36 @@ include_once('includes/sidebar.php');
                                        
 <div class="form-row">
 <div class="col-md-6 mb-10">
-<label for="validationCustom03">Category</label>
- <select class="form-control custom-select" name="category" required>
-<option value="">Select category</option>
-<?php
-$ret=mysqli_query($con,"select CategoryName from tblcategory");
-while($row=mysqli_fetch_array($ret))
-{?>
-<option value="<?php echo $row['CategoryName'];?>"><?php echo $row['CategoryName'];?></option>
-<?php } ?>
-</select>
-<div class="invalid-feedback">Please select a category.</div>
+<label for="validationCustom03">Email</label>
+<input type="email" class="form-control">
 </div>
 </div>
 
 <div class="form-row">
 <div class="col-md-6 mb-10">
-<label for="validationCustom03">Company</label>
- <select class="form-control custom-select" name="company" required>
-<option value="">Select Company</option>
-<?php
-$ret=mysqli_query($con,"select CompanyName from tblcompany");
-while($row=mysqli_fetch_array($ret))
-{?>
-<option value="<?php echo $row['CompanyName'];?>"><?php echo $row['CompanyName'];?></option>
-<?php } ?>
-</select>
-<div class="invalid-feedback">Please select a company.</div>
-</div>
-</div>
- <div class="form-row">
-<div class="col-md-6 mb-10">
 <label for="validationCustom03">Product Name</label>
-<input type="text" class="form-control" id="validationCustom03" placeholder="Product Name" name="productname" required>
-<div class="invalid-feedback">Please provide a valid product name.</div>
+<input type="text" class="form-control">
 </div>
-</div>   
+</div>
+
+ 
 
 <div class="form-row">
 <div class="col-md-6 mb-10">
 <label for="validationCustom03">Product Price</label>
-<input type="text" class="form-control" id="validationCustom03" placeholder="Product Price" name="productprice" required>
-<div class="invalid-feedback">Please provide a valid product price.</div>
+<input type="text" class="form-control" >
 </div>
 </div>
 
-<button class="btn btn-primary" type="submit" name="submit">Submit</button>
+<div class="form-row">
+<div class="col-md-6 mb-10">
+<label for="validationCustom03">Date of selling</label>
+<input type="date" class="form-control" >
+</div>
+</div>
+
+
+<button class="btn btn-primary" type="submit" name="submit">Sell Now</button>
 </form>
 </div>
 </div>
@@ -140,9 +125,7 @@ while($row=mysqli_fetch_array($ret))
 </div>
 
 
-            <!-- Footer -->
-<?php include_once('includes/footer.php');?>
-            <!-- /Footer -->
+           
 
         </div>
         <!-- /Main Content -->
@@ -163,4 +146,3 @@ while($row=mysqli_fetch_array($ret))
 
 </body>
 </html>
-<?php } ?>
