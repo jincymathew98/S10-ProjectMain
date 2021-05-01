@@ -192,7 +192,7 @@
 							<table border="5px" class="table">
 								<tr style="text-align: center; color: Black; font-weight: bold;">
 									<td>Image</td>
-									<td>Product ID</td>
+									<td>#</td>
 									<td>Product Name</td>
 									<td>Product Brand</td>
 									<td>Product Size</td>
@@ -206,11 +206,12 @@
 									require 'Connection.php';
 									$sql = "select * from tbl_products";
 									$Resulta = mysqli_query($Conn,$sql);
+                                    $cnt=1;
 									while($Rows = mysqli_fetch_array($Resulta)):; 
 								?>
 								<tr style="color: black">
 									<td><img style="width: 50px; height: 50px;" src="data:image;base64,<?php echo $Rows[7];?>"></td>
-									<td><?php $cid = $Rows["ProductID"]; echo $cid; ?></td>
+									<td><?php echo $cnt; ?></td>
 									<td><?php echo $Rows["Productname"]; ?></td>
 									<td><?php echo $Rows["ProductBrand"]; ?></td>
 									<td><?php echo $Rows["ProductSize"]; ?></td>
@@ -218,11 +219,13 @@
 									<td><?php echo $Rows["ProductPrice"]; ?></td>
 									<td><?php echo $Rows["ProductCategory"]; ?></td>
 									<td>
-                                    <a href="pdf_report.php?ProductID=<?php echo $Rows[0]; ?> "  onclick="ProductOnlick('Edit',<?php echo $Rows[0]; ?>)">Download</a>|
+                                    <!-- <a href="pdf_report.php?ProductID=<?php echo $Rows[0]; ?> "  onclick="ProductOnlick('Edit',<?php echo $Rows[0]; ?>)">Download</a>| -->
 									<a href="delete.php?ProductID=<?php echo $Rows[0]; ?> "   onclick="ProductOnlick('Delete',<?php echo $Rows[0]; ?>)">Delete</a>  
 									
 									</td>
-									<?php endwhile; ?>
+									<?php 
+                                $cnt++;
+                                endwhile; ?>
 								</tr>
 							</table>
 						</div>

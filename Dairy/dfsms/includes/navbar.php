@@ -1,14 +1,31 @@
      <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar">
             <a id="navbar_toggle_btn" class="navbar-toggle-btn nav-link-hover" href="javascript:void(0);"><i class="ion ion-ios-menu"></i></a>
-            <a class="navbar-brand" href="dashboard.php">
-                        <!-- Logo icon -->
+            <!-- <a class="navbar-brand" href="dashboard.php">
+                      
                         
                         <span class="logo-text">
-                            <!-- dark Logo text -->
+                            
                             <img src="images/logo-text.png"  class="dark-logo" width="35%" height="35%" />
 
                         </span>
-                    </a>
+                    </a> -->
+                    <a class="" href="cart.php">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="badge badge-light" id="cart-item"></span>
+            </a>
+            &nbsp;
+            <a class="" href="wishlist.php">
+                <i class="fa fa-heart"></i>
+                <span class="badge badge-light" id="cart-item"></span>
+            </a>
+            &nbsp;&nbsp;
+            <a class="btn btn-outline-primary" href="myorders.php">
+                <i class="">My orders</i>
+                <span class="badge badge-light" id="cart-item"></span>
+            </a>
+          
+
+            
             <ul class="navbar-nav hk-navbar-content">
 
                 <li class="nav-item dropdown dropdown-authentication">

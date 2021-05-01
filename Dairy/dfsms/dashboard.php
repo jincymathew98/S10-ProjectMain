@@ -73,37 +73,7 @@ include_once('includes/sidebar.php');
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-     
-	  
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-		
-      </button>
-		
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="btn btn-success btn-sm mt-1" href="cart.php">
-                <i class="fa fa-shopping-cart"></i>
-                <span class="badge badge-light" id="cart-item"></span>
-            </a>
-            <a class="btn btn-success btn-sm mt-1" href="wishlist.php">
-                <i class="fa fa-heart"></i>
-                <span class="badge badge-light" id="cart-item"></span>
-            </a>
-            <a class="btn btn-success btn-sm mt-1" href="myorders.php">
-                <i class="">My orders</i>
-                <span class="badge badge-light" id="cart-item"></span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
+  
   <!-- Page Content -->
   
   <div class="alert-message"></div>
