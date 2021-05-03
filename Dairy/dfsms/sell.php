@@ -9,24 +9,23 @@
 	if(isset($_POST["submit"]))
 	{
 		
-		$_email=$_GET['emailid'];
-		$_name=$_GET['productname'];
+		$email=$_POST['emailid'];
+		$name=$_POST['productname'];
 
-		$_Quantity = $_POST["quantity"];
-        $price=$_GET['productprice'];
+		$Quantity = $_POST["quantity"];
+        $price=$_POST['productprice'];
 		
-		$_dateofselling = $_POST["date"];
+		$dateofselling = $_POST["date"];
 		
 
 
 		
-		$sql = "INSERT INTO `tblsell`( `userid`, `productname`,`quantity`, `productprice`, `dateofselling`, `salecompleted`)".
-		"VALUES ('$_Quantity','$_dateofselling')";
+		$sql = "INSERT INTO tblsell(userid,productname,quantity, productprice, dateofselling) VALUES ('$email','$name','$Quantity','$price','$dateofselling')";
 		$res = mysqli_query($con,$sql);
 		if($res)
 		{
            
-			 '<script>window.alert("Product has been successfully saled!"); window.open("add-product.php","_self",null,true)</script>';
+			echo '<script>window.alert("Product has been successfully saled!"); window.open("add-product.php","_self",null,true)</script>';
 		}
 		else
 		{

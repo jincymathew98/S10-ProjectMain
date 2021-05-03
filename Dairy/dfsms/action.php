@@ -123,7 +123,10 @@ if(isset($_POST["action"]) && isset($_POST["action"])=="order")
 											      :address,
 												  :pmode,
 												  :products,
-												  :pamount)"); 					
+												  :pamount)"); 		
+												  
+												  
+												  
 	$insert_stmt->bindParam(":uname",$name);	
 	$insert_stmt->bindParam(":email",$email);	
 	$insert_stmt->bindParam(":phone",$phone);	
@@ -131,7 +134,7 @@ if(isset($_POST["action"]) && isset($_POST["action"])=="order")
 	$insert_stmt->bindParam(":pmode",$pmode);	
 	$insert_stmt->bindParam(":products",$products);	
 	$insert_stmt->bindParam(":pamount",$grand_total);	
-	$insert_stmt->execute();
+	//$insert_stmt->execute();
 	
 	$data.='<div class="text-center">
 				<h1 class="display-4 mt-2 text-danger">Thank You!</h1>

@@ -74,7 +74,7 @@ $allItems = implode(", ", $items);
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="index.php">Home</a>
+      <a class="navbar-brand" href="dashboard.php">Home</a>
       
 	  
       
@@ -120,11 +120,11 @@ $allItems = implode(", ", $items);
 				
 				<div class="form-group">
 				
-					<input type="text" name="name" class="form-control" placeholder="Enter name" value="<?php echo $userrow['name']; ?>" disabled required>
+					<input type="text" name="name" class="form-control" placeholder="Enter name" value="<?php echo $userrow['name']; ?>"  required>
 				</div>	
 				
 				<div class="form-group">
-					<input type="email" name="email" class="form-control" placeholder="Enter email" value="<?php echo $userrow['email']; ?>" disabled required>
+					<input type="email" name="email" class="form-control" placeholder="Enter email" value="<?php echo $userrow['email']; ?>"  required>
 				</div>
 				
 				<div class="form-group">

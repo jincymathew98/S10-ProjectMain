@@ -73,7 +73,7 @@ include_once('includes/sidebar.php');
 <div class="form-row">
 <div class="col-md-6 mb-10">
 <label for="validationCustom03">Email</label>
-<input type="email" class="form-control" name="emailid" value="<?php echo $_SESSION['email'];?>" disabled>
+<input type="email" class="form-control" name="emailid" value="<?php echo $_SESSION['email'];?>"  >
 </div>
 </div>
 
@@ -110,7 +110,7 @@ include_once('includes/sidebar.php');
          
      }
      </script>
-<input type="text" class="form-control" name="productname" disabled value="<?php echo $row['Productname']; ?>" > 
+<input type="text" class="form-control" name="productname"  value="<?php echo $row['Productname']; ?>" > 
 </div>
 </div>
 
@@ -124,14 +124,14 @@ include_once('includes/sidebar.php');
 <div class="form-row">
 <div class="col-md-6 mb-10">
 <label for="validationCustom03"  >Product Price( <?php echo $row['ProductPrice']; ?> Rs. per litre)</label>
-<input type="number" class="form-control" name="productprice"  id="milk_price" disabled >
+<input type="number" class="form-control" name="productprice"  id="milk_price"  >
 </div>
 </div>
 
 <div class="form-row">
 <div class="col-md-6 mb-10">
 <label for="validationCustom03">Date of selling</label>
-<input type="text" class="form-control" name="date" value="<?php echo current_time(); ?>">
+<input type="text" class="form-control" name="date" value="<?php echo current_time(); ?>" >
 </div>
 </div>
 

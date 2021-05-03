@@ -133,11 +133,11 @@ include_once('includes/sidebar.php');
 							
                             <td><?php echo $row["product_name"]; ?></td>
 							
-                            <td><?php echo number_format($row["product_price"],2); ?></td>
+                            <td><?php echo $row["product_price"]; ?></td>
 							
                             <td><input type="number" class="form-control itemQty" value="<?php echo $row['quantity']; ?>" style="width:75px;" min="1"></td>
 							
-                            <td class="text-right"><?php echo number_format($row["total_price"],2); ?></td>
+                            <td class="text-right"><?php echo $row["total_price"]; ?></td>
 							
                             <td class="text-right">
 							<a href="action.php?remove=<?php echo $row["cart_id"];?>" onClick="return confirm('Are you sure want to remove this item?');"  class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a> 

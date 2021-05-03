@@ -184,13 +184,17 @@ if(!empty($_SESSION['email']))
 </head>
 
 
+
 <table class="table">
     <thead >
       <tr  class="table-primary">
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+      <th scope="col">#</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Date of selling</th>
+
       </tr>
     </thead>
     <tbody>
