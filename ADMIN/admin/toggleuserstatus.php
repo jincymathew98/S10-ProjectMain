@@ -2,7 +2,7 @@
 
 session_start();
 if (!isset($_SESSION['email']))
-    die("invalid creds");
+    die("invalid crediantials");
 
 if (!isset($_GET['id']))
     die("invalid inputs");

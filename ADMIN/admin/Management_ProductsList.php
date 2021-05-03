@@ -76,33 +76,12 @@
                     <!-- ============================================================== -->
                     <!-- toggle and nav items -->
                     <!-- ============================================================== -->
-                    <ul class="navbar-nav me-auto mt-md-0 ">
-                        <!-- ============================================================== -->
-                        <!-- Search -->
-                        <!-- ============================================================== -->
-
-                        <li class="nav-item hidden-sm-down">
-                            <form class="app-search ps-3">
-                                <input type="text" class="form-control" placeholder="Search for..."> <a
-                                    class="srh-btn"><i class="ti-search"></i></a>
-                            </form>
-                        </li>
-                    </ul>
+                   
 
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
                     <!-- ============================================================== -->
-                    <ul class="navbar-nav">
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                JINCY MATHEW
-                            </a>
-                            <ul class="dropdown-menu show" aria-labelledby="navbarDropdown"></ul>
-                        </li>
-                    </ul>
+                   
                 </div>
             </nav>
         </header>
@@ -192,7 +171,7 @@
 							<table border="5px" class="table">
 								<tr style="text-align: center; color: Black; font-weight: bold;">
 									<td>Image</td>
-									<td>#</td>
+									<td>Product ID</td>
 									<td>Product Name</td>
 									<td>Product Brand</td>
 									<td>Product Size</td>
@@ -206,12 +185,11 @@
 									require 'Connection.php';
 									$sql = "select * from tbl_products";
 									$Resulta = mysqli_query($Conn,$sql);
-                                    $cnt=1;
 									while($Rows = mysqli_fetch_array($Resulta)):; 
 								?>
 								<tr style="color: black">
 									<td><img style="width: 50px; height: 50px;" src="data:image;base64,<?php echo $Rows[7];?>"></td>
-									<td><?php echo $cnt; ?></td>
+									<td><?php $cid = $Rows["ProductID"]; echo $cid; ?></td>
 									<td><?php echo $Rows["Productname"]; ?></td>
 									<td><?php echo $Rows["ProductBrand"]; ?></td>
 									<td><?php echo $Rows["ProductSize"]; ?></td>
@@ -223,9 +201,7 @@
 									<a href="delete.php?ProductID=<?php echo $Rows[0]; ?> "   onclick="ProductOnlick('Delete',<?php echo $Rows[0]; ?>)">Delete</a>  
 									
 									</td>
-									<?php 
-                                $cnt++;
-                                endwhile; ?>
+									<?php endwhile; ?>
 								</tr>
 							</table>
 						</div>

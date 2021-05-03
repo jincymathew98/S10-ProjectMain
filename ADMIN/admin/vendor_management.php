@@ -216,18 +216,18 @@ function toggleuser(element){
                         $update_status_sql="update tbl_reg set status='$status' where lid='$id'";
                         $updateresult = mysqli_query($con,$update_status_sql);
                         if ($updateresult){
-                            die("succes ya mone");
+                            die("succesful");
                         } else {
-                            die("moonchi mone");
+                            die("Failed");
                         }
                     } elseif ($type=='delete'){
                         $id=get_safe_value($con,$_GET['lid']);
                         $delete_sql="delete from tbl_reg where lid='$id'";
                         $deleteresult = mysqli_query($con,$delete_sql);
                         if ($deleteresult){
-                            die("delete succes ya mone");
+                            die("deleted successfully");
                         } else {
-                            die("delete moonchi mone");
+                            die("failed to delete");
                         }
                     }
                 }

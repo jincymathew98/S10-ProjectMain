@@ -86,18 +86,18 @@ include_once('includes/sidebar.php');
 		
 		<?php
 		require_once "includes/dbconfig.php";
-		$select_stmt=$db->prepare("SELECT * FROM product");	
+		$select_stmt=$db->prepare("SELECT * FROM tbl_products");	
 		$select_stmt->execute();
 		while($row=$select_stmt->fetch(PDO::FETCH_ASSOC))
 		{
 		?>
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="images/<?php echo $row['product_image']; ?>" width="400px" height="200px"></a>
+              <a href="#"><img class="card-img-top" src="data:image;base64,<?php echo $row['ProductImage']; ?>" width="400px" height="200px"></a>
 			  
               <div class="card-body">
-                <h4 class="card-title text-primary"><?php echo $row['product_name']; ?> </h4>
-                <h5><?php echo number_format($row['product_price'],2); ?>/-</h5>
+                <h4 class="card-title text-primary"><?php echo $row['Productname']; ?> </h4>
+                <h5><?php echo $row['ProductPrice']; ?>/-</h5>
               </div>
 			  
               <div class="card-footer">
@@ -108,7 +108,7 @@ include_once('includes/sidebar.php');
 					<input type="hidden" class="pimage" value="<?php echo $row['product_image']; ?>">
 					<input type="hidden" class="pcode" value="<?php echo $row['product_code']; ?>">
 					<button id="addItem" class="btn btn-success btn-md">Add to Cart</button><br>
-          <a href="feedback.html"><U>See more</U></a>
+          <a href="productdetails.php"><U>See more</U></a>
 				</form>
               </div>
 			  

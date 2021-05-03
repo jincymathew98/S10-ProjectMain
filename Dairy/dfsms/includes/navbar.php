@@ -14,7 +14,7 @@
                 <span class="badge badge-light" id="cart-item"></span>
             </a>
             &nbsp;
-            <a class="" href="wishlist.php">
+            <a class="" href="my-wishlist.php">
                 <i class="fa fa-heart"></i>
                 <span class="badge badge-light" id="cart-item"></span>
             </a>
