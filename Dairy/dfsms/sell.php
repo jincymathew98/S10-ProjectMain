@@ -9,9 +9,11 @@
 	if(isset($_POST["submit"]))
 	{
 		
-		
+		$_email=$_GET['emailid'];
+		$_name=$_GET['productname'];
+
 		$_Quantity = $_POST["quantity"];
-       
+        $price=$_GET['productprice'];
 		
 		$_dateofselling = $_POST["date"];
 		
@@ -23,8 +25,8 @@
 		$res = mysqli_query($con,$sql);
 		if($res)
 		{
-            die("$sql");
-			//echo '<script>window.alert("Product has been successfully saled!"); window.open("add-product.php","_self",null,true)</script>';
+           
+			 '<script>window.alert("Product has been successfully saled!"); window.open("add-product.php","_self",null,true)</script>';
 		}
 		else
 		{

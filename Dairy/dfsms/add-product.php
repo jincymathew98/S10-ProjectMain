@@ -131,7 +131,7 @@ include_once('includes/sidebar.php');
 <div class="form-row">
 <div class="col-md-6 mb-10">
 <label for="validationCustom03">Date of selling</label>
-<input type="date" class="form-control" name="date" value="<?php echo current_time(); ?>">
+<input type="text" class="form-control" name="date" value="<?php echo current_time(); ?>">
 </div>
 </div>
 
