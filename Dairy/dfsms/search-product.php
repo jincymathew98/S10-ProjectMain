@@ -2,9 +2,10 @@
 session_start();
 //error_reporting(0);
 include('includes/config.php');
-if (strlen($_SESSION['aid']==0)) {
+if (!isset($_SESSION['email'])) 
+
   header('location:logout.php');
-  } else{
+ 
 //code for Cart
 if(!empty($_GET["action"])) {
 switch($_GET["action"]) {
@@ -315,9 +316,7 @@ if(isset($_SESSION["cart_item"])){
 </div>
 
 
-            <!-- Footer -->
-<?php include_once('includes/footer.php');?>
-            <!-- /Footer -->
+          
 
         </div>
         <!-- /Main Content -->
@@ -351,4 +350,3 @@ if(isset($_SESSION["cart_item"])){
 
 </body>
 </html>
-<?php } ?>

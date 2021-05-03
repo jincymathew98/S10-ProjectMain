@@ -46,8 +46,8 @@ include_once('includes/sidebar.php');
             <!-- Breadcrumb -->
             <nav class="hk-breadcrumb" aria-label="breadcrumb">
                 <ol class="breadcrumb breadcrumb-light bg-transparent">
-<li class="breadcrumb-item"><a href="#">Product</a></li>
-<li class="breadcrumb-item active" aria-current="page">Sell</li>
+                    <li class="breadcrumb-item"><a href="#">Product</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Sell</li>
                 </ol>
             </nav>
             <!-- /Breadcrumb -->
@@ -73,7 +73,7 @@ include_once('includes/sidebar.php');
 <div class="form-row">
 <div class="col-md-6 mb-10">
 <label for="validationCustom03">Email</label>
-<input type="email" class="form-control" name="email" value="<?php echo $_SESSION['email'];?>" disabled>
+<input type="email" class="form-control" name="emailid" value="<?php echo $_SESSION['email'];?>" disabled>
 </div>
 </div>
 
@@ -110,7 +110,7 @@ include_once('includes/sidebar.php');
          
      }
      </script>
-<input type="text" class="form-control" name="name" disabled value="<?php echo $row['Productname']; ?>" > 
+<input type="text" class="form-control" name="productname" disabled value="<?php echo $row['Productname']; ?>" > 
 </div>
 </div>
 
@@ -124,7 +124,7 @@ include_once('includes/sidebar.php');
 <div class="form-row">
 <div class="col-md-6 mb-10">
 <label for="validationCustom03"  >Product Price( <?php echo $row['ProductPrice']; ?> Rs. per litre)</label>
-<input type="number" class="form-control" name="price"  id="milk_price" disabled >
+<input type="number" class="form-control" name="productprice"  id="milk_price" disabled >
 </div>
 </div>
 

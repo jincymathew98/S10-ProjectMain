@@ -14,7 +14,7 @@ $query = "insert into password_reset_temp values ('$email', '$key', '$expiry')";
 $result = mysqli_query($con, $query);
 
 if (!$result){
-    die("Error");
+    //die("Error");
 } 
 $url="http://localhost/PROJECT/resetpassword/setnewpassword.php?key=$key&email=$email";
 $mailresult=sendmail($email,'Reset Your Password',$url);

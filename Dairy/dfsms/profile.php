@@ -2,18 +2,19 @@
 session_start();
 //error_reporting(0);
 include('includes/config.php');
-// if (strlen($_SESSION['aid']==0)) {
-//   header('location:logout.php');
-//   } else{
+if (!isset($_SESSION['email'])) 
+
+  header('location:logout.php');
+ 
 // Add company Code
 if(isset($_POST['update']))
 {
-  
-
-$adminname=$_POST['name'];  
-$emailid=$_POST['email'];  
-$mobileno=$_POST['phno'];   
-$query=mysqli_query($con,"update tbl_reg set name='$adminname',phno='$mobileno',email='$emailid' where lid='$id'"); 
+ $adminid=$_SESSION['email'];   
+//Getting Post Values
+$adminname=$_POST['adminname'];  
+$emailid=$_POST['emailid'];  
+$mobileno=$_POST['mobilenumber'];   
+$query=mysqli_query($con,"update tbl_reg set name='$adminname',phno='$mobileno',email='$emailid' where email='$adminid'"); 
 if($query){
 echo "<script>alert('Admin details updated successfully.');</script>";   
 echo "<script>window.location.href='profile.php'</script>";
@@ -79,12 +80,10 @@ include_once('includes/sidebar.php');
 <div class="col-sm">
 <form class="needs-validation" method="post" novalidate>
 <?php 
-
-
-
-$query=mysqli_query($con,"select * from tbl_reg  ");
-while($row=mysqli_fetch_array($query))
-{
+//Getting admin name
+$adminid=$_SESSION['email'];
+$query=mysqli_query($con,"select * from tbl_reg where email='$adminid'");
+while($row=mysqli_fetch_array($query)){
 ?>   
 
 
@@ -129,8 +128,6 @@ while($row=mysqli_fetch_array($query))
 </div>
 </div>
 
-
-          
 
         </div>
         <!-- /Main Content -->
