@@ -22,8 +22,10 @@
 
 
 		
+		
 		$sql = "INSERT INTO `tbl_products`(`Productname`, `ProductBrand`, `ProductSize`,`ProductPrice`, `ProductCategory`, `ProductImageName`, `ProductImage`)" . 
 		"VALUES ('$_ProductName','$_ProductBrand','$_ProductSize','$_ProductPrice','$_ProductCategory','$name','$image')";
+
 		$res = mysqli_query($Conn,$sql);
 		if($res)
 		{
@@ -34,5 +36,6 @@
 			echo '<script>alert("Already inserted this product!")</script>';
 		}
 	}
+
 
 ?>

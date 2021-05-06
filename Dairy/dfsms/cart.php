@@ -146,8 +146,10 @@ include_once('includes/sidebar.php');
 							<input type="hidden" class="pid" value="<?php echo $row["cart_id"]; ?>"> 
 							<input type="hidden" class="pprice" value="<?php echo $row["product_price"]; ?>">
 							
-							<?php $grand_total +=$row["total_price"]; ?>
-                        </tr>
+							<?php 
+              echo $grand_total+=$row["total_price"];
+              ?>
+                    </tr>
 						<?php
 						}
 						?> 

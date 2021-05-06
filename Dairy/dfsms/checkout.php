@@ -110,7 +110,7 @@ $allItems = implode(", ", $items);
 			<div class="jumbotron p-3 mb-2 text-center">
 				<h6 class="load"><b>Product(s) : </b> <?php echo $allItems; ?></h6>
 				<h6 class="lead"><b>Delivery Charge : </b>Free</h6>
-				<h5><b>Total Amount Payable : </b><?php echo number_format($grand_total,2)?>/- </h5>
+				<h5><b>Total Amount Payable : </b><?php echo number_format($grand_total)?>/- </h5>
 			</div>
 			
 			<form method="post" id="placeOrder">

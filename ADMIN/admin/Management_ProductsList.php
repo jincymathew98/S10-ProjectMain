@@ -3,6 +3,8 @@
 <html dir="ltr" lang="en">
 
 <head>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
@@ -135,12 +137,12 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="page-title mb-0 p-0">Blank Page</h3>
+                      
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Blank Page</li>
+                                    <li class="breadcrumb-item"><a href="admin.php">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">View Products</li>
                                 </ol>
                             </nav>
                         </div>
@@ -168,40 +170,50 @@
 					<hr>
 					<div class="col-lg-12">
 						<div class="table-responsive">
-							<table border="5px" class="table">
-								<tr style="text-align: center; color: Black; font-weight: bold;">
-									<td>Image</td>
-									<td>Product ID</td>
-									<td>Product Name</td>
-									<td>Product Brand</td>
-									<td>Product Size</td>
-									<td>Product Color</td>
-									<td>Product Price</td>
-									<td>Product Category</td>
-									<td>Action</td>
+							<table  class="table">
+                            <thead>
+								<tr class="table-primary">
+									
+									<th>#</th>
+									<th>Product Name</th>
+									<th>Product Brand</th>
+									<th>Product Size</th>
+									<th>Product Color</th>
+									<th>Product Price</th>
+									<th>Product Category</th>
+                                    <th>Image</th>
+									<th>Action</th>
 								</tr>
-								
+								</thead>
+                                <tbody>
 								<?php 
 									require 'Connection.php';
 									$sql = "select * from tbl_products";
 									$Resulta = mysqli_query($Conn,$sql);
+                                    $cnt=1;
 									while($Rows = mysqli_fetch_array($Resulta)):; 
 								?>
 								<tr style="color: black">
-									<td><img style="width: 50px; height: 50px;" src="data:image;base64,<?php echo $Rows[7];?>"></td>
-									<td><?php $cid = $Rows["ProductID"]; echo $cid; ?></td>
+								
+                                    <td><?php echo $cnt;?></td>
 									<td><?php echo $Rows["Productname"]; ?></td>
 									<td><?php echo $Rows["ProductBrand"]; ?></td>
 									<td><?php echo $Rows["ProductSize"]; ?></td>
 									<td><?php echo $Rows["ProductBrand"]; ?></td>
 									<td><?php echo $Rows["ProductPrice"]; ?></td>
 									<td><?php echo $Rows["ProductCategory"]; ?></td>
+                                    <td><img style="width: 50px; height: 50px;" src="data:image;base64,<?php echo $Rows[7];?>"></td>
 									<td>
                                     <!-- <a href="pdf_report.php?ProductID=<?php echo $Rows[0]; ?> "  onclick="ProductOnlick('Edit',<?php echo $Rows[0]; ?>)">Download</a>| -->
 									<a href="delete.php?ProductID=<?php echo $Rows[0]; ?> "   onclick="ProductOnlick('Delete',<?php echo $Rows[0]; ?>)">Delete</a>  
 									
 									</td>
-									<?php endwhile; ?>
+                                    </tbody>
+									<?php 
+                                
+                                 $cnt++;
+                                
+                                endwhile; ?>
 								</tr>
 							</table>
 						</div>

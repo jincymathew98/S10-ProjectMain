@@ -189,7 +189,6 @@ if(!empty($_SESSION['email']))
     <thead >
       <tr  class="table-primary">
       <th scope="col">#</th>
-        <th scope="col">Product Name</th>
         <th scope="col">Email</th>
         <th scope="col">Quantity</th>
         <th scope="col">Amount</th>
@@ -197,26 +196,32 @@ if(!empty($_SESSION['email']))
 
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
+   
+    <?php 
+									require 'Connection.php';
+									$sql = "select * from tblsell";
+									$Resulta = mysqli_query($Conn,$sql);
+                                    $cnt=1;
+									while($Rows = mysqli_fetch_array($Resulta)):; 
+								?>
+								<tr style="color: black">
+	
+                                <td><?php echo $cnt;?></td>
+									<td><?php echo $Rows["userid"]; ?></td>
+									<td><?php echo $Rows["quantity"]; ?></td>
+									<td><?php echo $Rows["productprice"]; ?></td>
+									<td><?php echo $Rows["dateofselling"]; ?></td>
+								
+									<td>
+                                    <!-- <a href="pdf_report.php?ProductID=<?php echo $Rows[0]; ?> "  onclick="ProductOnlick('Edit',<?php echo $Rows[0]; ?>)">Download</a>| -->
+									<!-- <a href="delete.php?ProductID=<?php echo $Rows[0]; ?> "   onclick="ProductOnlick('Delete',<?php echo $Rows[0]; ?>)">Delete</a>   -->
+									
+									</td>
+									<?php 
+                                  
+                                 $cnt++;
+                                
+                                endwhile; ?>
   </table>
   
   
