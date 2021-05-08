@@ -98,6 +98,7 @@ include_once('includes/sidebar.php');
               <div class="card-body">
                 <h4 class="card-title text-primary"><?php echo $row['Productname']; ?> </h4>
                 <h5><?php echo $row['ProductPrice']; ?>/-</h5>
+                <h6 style="color:red;"><?php echo $row['action']; ?></h6>
               </div>
 			  
               <div class="card-footer">

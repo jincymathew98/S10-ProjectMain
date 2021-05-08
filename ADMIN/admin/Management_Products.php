@@ -209,6 +209,11 @@
 							  <label for="ProductCategory">Category:</label>
 							  <input type="text" name="ProductCategory" class="form-control" id="ProductCategory" placeholder="Enter Product Category" required>
 							</div>
+
+
+                           
+
+
 							
 		<div class="form-group">
 			<label for="ProductImage">Product Image:</label>

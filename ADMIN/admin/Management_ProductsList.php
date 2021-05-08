@@ -5,6 +5,40 @@
 <head>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    
+<script>
+function toggleuser(element){
+    var row = element.parentElement.parentElement;
+    var id = row.id.split('_')[1];
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function()
+     {
+        if (this.readyState == 4 && this.status == 200)
+         {
+            console.log(this.response);
+            if (this.response == "SUCCESSFULL")
+            {
+                // console.log(row)
+                var button = row.children[row.children.length - 1].children[0];
+                button.classList.toggle("btn-success");
+                button.classList.toggle("btn-danger");
+                if (button.innerHTML == "Instock")
+                    button.innerHTML = "Outstock";
+                else 
+                    button.innerHTML = "Instock";
+            } else {
+                alert("something went wrong");
+            }
+        }
+    };
+    xhttp.open("GET", "userstatus.php?id="+ProductID, true);
+    xhttp.send();
+
+}
+</script>
+
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
@@ -161,6 +195,41 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                  
+                <?php
+                require('dbconnection.php');
+
+                if(isset($_GET['type']) && $_GET['type']!=''){
+                    $type=get_safe_value($con,$_GET['type']);
+                    die($type);
+                    if($type=='action'){
+                        $operation=get_safe_value($con,$_GET['operation']);
+                        $id=get_safe_value($con,$_GET['ProductID']);
+                        if($operation=='active'){
+                            $action='Instock';
+                        }else{
+                            $action='Outstock';
+                        }
+                        $update_status_sql="update tbl_products set action='$action' where ProductID='$id'";
+                        $updateresult = mysqli_query($con,$update_status_sql);
+                        if ($updateresult){
+                            die("succesful");
+                        } else {
+                            die("Failed");
+                        }
+                    } elseif ($type=='delete'){
+                        $id=get_safe_value($con,$_GET['ProductID']);
+                        $delete_sql="delete from tbl_products where ProductID='$id'";
+                        $deleteresult = mysqli_query($con,$delete_sql);
+                        if ($deleteresult){
+                            die("deleted successfully");
+                        } else {
+                            die("failed to delete");
+                        }
+                    }
+                }
+
+
+?>
     <div class="container">
         <div class="row">
             <div class="box">
@@ -204,10 +273,18 @@
 									<td><?php echo $Rows["ProductCategory"]; ?></td>
                                     <td><img style="width: 50px; height: 50px;" src="data:image;base64,<?php echo $Rows[7];?>"></td>
 									<td>
-                                    <!-- <a href="pdf_report.php?ProductID=<?php echo $Rows[0]; ?> "  onclick="ProductOnlick('Edit',<?php echo $Rows[0]; ?>)">Download</a>| -->
-									<a href="delete.php?ProductID=<?php echo $Rows[0]; ?> "   onclick="ProductOnlick('Delete',<?php echo $Rows[0]; ?>)">Delete</a>  
-									
-									</td>
+                                                <?php
+                                                if($Rows['action']=='Instock'){ ?>
+                                                    <button class='btn btn-danger' onclick="toggleuser(this)">Instock</button>
+                                                <?php }
+                                                else
+                                                { ?>
+                                                    <button class='btn btn-success' onclick="toggleuser(this)">Outstock</button>
+                                                <?php }
+                                               
+                                                
+                                                ?>
+                                               </td>
                                     </tbody>
 									<?php 
                                 
