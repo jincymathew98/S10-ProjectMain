@@ -129,7 +129,7 @@ include_once('includes/sidebar.php');
 						{
 						?>
                         <tr>
-                            <td><img src="images<?php echo $row["product_image"]; ?>" width="50" height="50"/> </td>
+                            <td><img src="data:image;base64,<?php echo $row['product_image']; ?>" width="50" height="50"/> </td>
 							
                             <td><?php echo $row["product_name"]; ?></td>
 							
