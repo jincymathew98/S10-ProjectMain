@@ -32,7 +32,7 @@ function toggleuser(element){
             }
         }
     };
-    xhttp.open("GET", "userstatus.php?id="+ProductID, true);
+    xhttp.open("GET", "userstatus.php?id="+product_id, true);
     xhttp.send();
 
 }
@@ -209,7 +209,7 @@ function toggleuser(element){
                         }else{
                             $action='Outstock';
                         }
-                        $update_status_sql="update tbl_products set action='$action' where ProductID='$id'";
+                        $update_status_sql="update tbl_products set action='$action' where product_id='$id'";
                         $updateresult = mysqli_query($con,$update_status_sql);
                         if ($updateresult){
                             die("succesful");
@@ -217,8 +217,8 @@ function toggleuser(element){
                             die("Failed");
                         }
                     } elseif ($type=='delete'){
-                        $id=get_safe_value($con,$_GET['ProductID']);
-                        $delete_sql="delete from tbl_products where ProductID='$id'";
+                        $id=get_safe_value($con,$_GET['product_id']);
+                        $delete_sql="delete from tbl_products where product_id='$id'";
                         $deleteresult = mysqli_query($con,$delete_sql);
                         if ($deleteresult){
                             die("deleted successfully");
@@ -249,7 +249,7 @@ function toggleuser(element){
 									<th>Product Size</th>
 									<th>Product Color</th>
 									<th>Product Price</th>
-									<th>Product Category</th>
+						
                                     <th>Image</th>
 									<th>Action</th>
 								</tr>
@@ -265,12 +265,12 @@ function toggleuser(element){
 								<tr style="color: black">
 								
                                     <td><?php echo $cnt;?></td>
-									<td><?php echo $Rows["Productname"]; ?></td>
+									<td><?php echo $Rows["product_name"]; ?></td>
 									<td><?php echo $Rows["ProductBrand"]; ?></td>
 									<td><?php echo $Rows["ProductSize"]; ?></td>
 									<td><?php echo $Rows["ProductBrand"]; ?></td>
-									<td><?php echo $Rows["ProductPrice"]; ?></td>
-									<td><?php echo $Rows["ProductCategory"]; ?></td>
+									<td><?php echo $Rows["product_price"]; ?></td>
+									
                                     <td><img style="width: 50px; height: 50px;" src="data:image;base64,<?php echo $Rows[7];?>"></td>
 									<td>
                                                 <?php
