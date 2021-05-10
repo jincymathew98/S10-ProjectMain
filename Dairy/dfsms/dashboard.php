@@ -99,6 +99,7 @@ include_once('includes/sidebar.php');
               <div class="card-body">
                 <h4 class="card-title text-primary"><?php echo $row['product_name']; ?> </h4>
                 <h5><?php echo number_format($row['product_price'],2); ?>/-</h5>
+                <h6 style="color:red"><?php echo $row['action']; ?></h6>
               </div>
 			  
               <div class="card-footer">

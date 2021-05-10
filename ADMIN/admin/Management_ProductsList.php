@@ -246,8 +246,8 @@ function toggleuser(element){
 									<th>#</th>
 									<th>Product Name</th>
 									<th>Product Brand</th>
-									<th>Product Size</th>
-									<th>Product Color</th>
+									<th>Product Quantity</th>
+									
 									<th>Product Price</th>
 						
                                     <th>Image</th>
@@ -268,10 +268,10 @@ function toggleuser(element){
 									<td><?php echo $Rows["product_name"]; ?></td>
 									<td><?php echo $Rows["ProductBrand"]; ?></td>
 									<td><?php echo $Rows["ProductSize"]; ?></td>
-									<td><?php echo $Rows["ProductBrand"]; ?></td>
+								
 									<td><?php echo $Rows["product_price"]; ?></td>
 									
-                                    <td><img style="width: 50px; height: 50px;" src="data:image;base64,<?php echo $Rows[7];?>"></td>
+                                    <td><img style="width: 50px; height: 50px;" src="data:image;base64,<?php echo $Rows["product_image"];?>"></td>
 									<td>
                                                 <?php
                                                 if($Rows['action']=='Instock'){ ?>

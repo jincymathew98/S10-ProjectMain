@@ -213,7 +213,6 @@
 
                            
 
-
 							
 		<div class="form-group">
 			<label for="ProductImage">Product Image:</label>
