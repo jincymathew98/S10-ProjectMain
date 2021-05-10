@@ -26,9 +26,7 @@
 <li class="nav-item">
 <a class="nav-link" href="add-product.php">Add</a>
 </li>
-<li class="nav-item">
-<a class="nav-link" href="manage-products.php">Edit</a>
-</li>
+
 </ul>
 </li>
 </ul>
@@ -41,12 +39,7 @@
 </a>
 </li>
 
-<li class="nav-item">
-<a class="nav-link" href="invoices.php">
-<i class="ion ion-ios-list-box"></i>
-<span class="nav-link-text">Invoices</span>
-</a>
-</li>
+
 
 <li class="nav-item">
 <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#reports_drp">

@@ -13,17 +13,19 @@
                 <i class="fa fa-shopping-cart"></i>
                 <span class="badge badge-light" id="cart-item"></span>
             </a>
-            &nbsp;
-            <a class="" href="my-wishlist.php">
-                <i class="fa fa-heart"></i>
-                <span class="badge badge-light" id="cart-item"></span>
-            </a>
+        
             &nbsp;&nbsp;
             <a class="btn btn-outline-primary" href="myorders.php">
                 <i class="">My orders</i>
                 <span class="badge badge-light" id="cart-item"></span>
             </a>
           
+            &nbsp;&nbsp;
+            
+            <a class="" href="search-product.php">
+                <i class="fa fa-search"></i>
+                <span class="badge badge-light" id="cart-item"></span>
+            </a>
 
             
             <ul class="navbar-nav hk-navbar-content">

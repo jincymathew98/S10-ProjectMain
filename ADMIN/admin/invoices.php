@@ -270,7 +270,7 @@ while($row=mysqli_fetch_array($query))
 <td><?php echo $row['paid_amount'];?></td>
 
 <td>
-<a href="view-invoice.php?invid=<?php echo base64_encode($row['InvoiceNumber'].$rno);?>" class="mr-25" data-toggle="tooltip" data-original-title="View Details"> <i class="glyphicon glyphicon-envelope"></i></a>
+<a href="pdf.php" >Download</a>
 </td>
 </tr>
 <?php 

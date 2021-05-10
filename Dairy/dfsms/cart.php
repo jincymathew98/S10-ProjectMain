@@ -147,7 +147,7 @@ include_once('includes/sidebar.php');
 							<input type="hidden" class="pprice" value="<?php echo $row["product_price"]; ?>">
 							
 							<?php 
-              echo $grand_total+=$row["total_price"];
+               $grand_total+=$row["total_price"];
               ?>
                     </tr>
 						<?php
@@ -162,7 +162,7 @@ include_once('includes/sidebar.php');
                             <td></td>
                             <td></td> 
                             <td><strong>Total</strong></td>
-                            <td class="text-right"><strong><?php echo number_format($grand_total,2); ?></strong></td>
+                            <td class="text-right"><strong><?php echo $grand_total; ?></strong></td>
                         </tr>
                     </tbody>
                 </table>
@@ -171,7 +171,7 @@ include_once('includes/sidebar.php');
         <div class="col mb-2">
             <div class="row">
                 <div class="col-sm-12  col-md-6">
-                    <a href="index.php" class="btn btn-block btn-light"><i class="fa fa-shopping-cart"></i> Continue Shopping</a>
+                    <a href="dashboard.php" class="btn btn-block btn-light"><i class="fa fa-shopping-cart"></i> Continue Shopping</a>
                 </div>
                 <div class="col-sm-12 col-md-6 text-right">
 					<a href="checkout.php" class="btn btn-md btn-block btn-success text-uppercase <?=($grand_total > 1)?"":"disabled"; ?>"> Checkout </a>

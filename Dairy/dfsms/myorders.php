@@ -50,11 +50,7 @@ include_once('includes/sidebar.php');
 
 error_reporting(0);
 include('includes/config.php');
-// if(strlen($_SESSION['login'])==0)
-//     {   
-// header('location:login.php');
-// }
-// else{
+
 
 ?>
 
@@ -157,7 +153,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 			<tbody>
 
 			<?php 
-								
+								  
 									$sql = "select * from orders";
 									$Resulta = mysqli_query($con,$sql);
                                     $cnt=1;
