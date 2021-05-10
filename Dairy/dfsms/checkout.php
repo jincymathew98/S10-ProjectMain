@@ -170,7 +170,7 @@ $allItems = implode(", ", $items);
 			e.preventDefault();
 			
 			$.ajax({
-				url: "action.php",
+				url: "action1.php",
 				method: "post",
 				data: $("form").serialize()+"&action=order",
 				success: function(response){
@@ -183,7 +183,7 @@ $allItems = implode(", ", $items);
 		
 	function load_cart_item_number(){
 		$.ajax({
-			url: "action.php",
+			url: "action1.php",
 			method: "get",
 			data: {cartItem:"cart_item"},
 			success:function(response){
