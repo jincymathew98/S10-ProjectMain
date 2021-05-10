@@ -20,12 +20,9 @@
                 <span class="badge badge-light" id="cart-item"></span>
             </a>
           
-            &nbsp;&nbsp;
+            &nbsp;
             
-            <a class="" href="search-product.php">
-                <i class="fa fa-search"></i>
-                <span class="badge badge-light" id="cart-item"></span>
-            </a>
+           
 
             
             <ul class="navbar-nav hk-navbar-content">

@@ -82,7 +82,7 @@ include_once('includes/sidebar.php');
 <label for="validationCustom03">Product Name</label>
 <?php
   require_once "includes/config.php";
-  $query="select Productname,ProductPrice from tbl_products where ProductID=29";
+  $query="select productname,productprice from local ";
   $result=mysqli_query($con,$query);
   if(!$result)
   {
@@ -100,7 +100,7 @@ include_once('includes/sidebar.php');
 
     function calculateprice()
      {
-         rate=<?php echo $row['ProductPrice']; ?>;
+         rate=<?php echo $row['productprice']; ?>;
          litres=parseInt(document.getElementById('litres_cal').value);
          price=rate*litres;
          console.log(typeof(rate))
@@ -110,7 +110,7 @@ include_once('includes/sidebar.php');
          
      }
      </script>
-<input type="text" class="form-control" name="productname"  value="<?php echo $row['Productname']; ?>" > 
+<input type="text" class="form-control" name="productname"  value="<?php echo $row['productname']; ?>" > 
 </div>
 </div>
 
@@ -123,7 +123,7 @@ include_once('includes/sidebar.php');
 
 <div class="form-row">
 <div class="col-md-6 mb-10">
-<label for="validationCustom03"  >Product Price( <?php echo $row['ProductPrice']; ?> Rs. per litre)</label>
+<label for="validationCustom03"  >Product Price( <?php echo $row['productprice']; ?> Rs. per litre)</label>
 <input type="number" class="form-control" name="productprice"  id="milk_price"  >
 </div>
 </div>

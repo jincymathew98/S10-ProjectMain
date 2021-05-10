@@ -84,7 +84,8 @@ include_once('includes/sidebar.php');
 		
         <div class="row">
 		
-		<?php
+		
+        <?php
 		require_once "includes/dbconfig.php";
 		$select_stmt=$db->prepare("SELECT * FROM tbl_products");	
 		$select_stmt->execute();
@@ -93,12 +94,11 @@ include_once('includes/sidebar.php');
 		?>
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="data:image;base64,<?php echo $row['ProductImage']; ?>" width="400px" height="200px"></a>
+              <a href="#"><img class="card-img-top" src="data:image;base64,<?php echo $row['product_image']; ?>" width="400px" height="200px"></a>
 			  
               <div class="card-body">
-                <h4 class="card-title text-primary"><?php echo $row['Productname']; ?> </h4>
-                <h5><?php echo $row['ProductPrice']; ?>/-</h5>
-                <h6 style="color:red;"><?php echo $row['action']; ?></h6>
+                <h4 class="card-title text-primary"><?php echo $row['product_name']; ?> </h4>
+                <h5><?php echo number_format($row['product_price'],2); ?>/-</h5>
               </div>
 			  
               <div class="card-footer">
@@ -108,7 +108,7 @@ include_once('includes/sidebar.php');
 					<input type="hidden" class="pprice" value="<?php echo $row['product_price']; ?>">
 					<input type="hidden" class="pimage" value="<?php echo $row['product_image']; ?>">
 					<input type="hidden" class="pcode" value="<?php echo $row['product_code']; ?>">
-					<button id="addItem" class="btn btn-success btn-md">Add to Cart</button><br>
+					<button id="addItem" class="btn btn-success btn-md">Add to Cart</button>
           <a href="productdetails.php"><U>See more</U></a>
 				</form>
               </div>
@@ -128,7 +128,7 @@ include_once('includes/sidebar.php');
   </div>
   <!-- /.container -->
   
- 
+  
 
   <!-- Bootstrap core JavaScript -->
   <script src="jquery/jquery.min.js"></script>
@@ -174,9 +174,6 @@ include_once('includes/sidebar.php');
 	});
   </script>
 
-</body>
-
-</html>
 
 
 

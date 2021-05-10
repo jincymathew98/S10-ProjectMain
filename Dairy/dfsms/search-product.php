@@ -109,7 +109,7 @@ $cnt=1;
 while($row=mysqli_fetch_array($query))
 {    
 ?>
-<form method="post" >                                                  
+<form method="post" action="cart.php">                                                  
 <tr>
 <td><?php echo $cnt;?></td>
 <td><?php echo $row['Productname'];?></td>
