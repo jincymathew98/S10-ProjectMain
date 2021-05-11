@@ -32,12 +32,7 @@
 </ul>
 </li>
 
-<li class="nav-item">
-<a class="nav-link" href="search-product.php">
-<i class="glyphicon glyphicon-search"></i>
-<span class="nav-link-text">Search Product</span>
-</a>
-</li>
+
 
 
 

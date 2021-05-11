@@ -61,26 +61,7 @@ include_once('includes/sidebar.php');
                 <div class="row">
                     <div class="col-xl-12">
 
-<section class="hk-sec-wrapper">
 
-<div class="row">
-<div class="col-sm">
-<form class="needs-validation" method="post" novalidate>
-                                       
-<div class="form-row">
-<div class="col-md-6 mb-10">
-<label for="validationCustom03">Product Name</label>
-<input type="text" class="form-control" id="validationCustom03" placeholder="Product Name" name="productname" required>
-<div class="invalid-feedback">Please provide a valid product name.</div>
-</div>
-</div>
-
-                                 
-<button class="btn btn-primary" type="submit" name="search">search</button>
-</form>
-</div>
-</div>
-</section>
 <!--code for search result -->
 <?php if(isset($_POST['search'])){?>
  <section class="hk-sec-wrapper">
@@ -92,9 +73,8 @@ include_once('includes/sidebar.php');
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>Category</th>
-                                                    <th>Company</th>
                                                     <th>Product</th>
+                                                    <th>Company</th>
                                                     <th>Pricing</th>
                                                     <th>Quantity</th>
                                                     <th>Action</th>
@@ -103,8 +83,8 @@ include_once('includes/sidebar.php');
                                             </thead>
                                             <tbody>
 <?php
-$pname=$_POST['productname'];
-$query=mysqli_query($con,"select * from tbl_products where Productname like '%$pname%'");
+$pname=$_POST['product'];
+$query=mysqli_query($con,"select * from tbl_products where product_name like '%$pname%'");
 $cnt=1;
 while($row=mysqli_fetch_array($query))
 {    
@@ -112,10 +92,10 @@ while($row=mysqli_fetch_array($query))
 <form method="post" action="cart.php">                                                  
 <tr>
 <td><?php echo $cnt;?></td>
-<td><?php echo $row['Productname'];?></td>
+<td><?php echo $row['product_name'];?></td>
 <td><?php echo $row['ProductBrand'];?></td>
-<td><?php echo $row['ProductPrice'];?></td>
-<td><?php echo $row['ProductCategory'];?></td>
+<td><?php echo $row['product_price'];?></td>
+
 <td><input type="text" class="product-quantity" name="quantity" value="1" size="2" /></td>
 <td>
 <input type="submit" value="Add to Cart" class="btnAddAction" >

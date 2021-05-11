@@ -2,9 +2,9 @@
 session_start();
 //error_reporting(0);
 include('includes/config.php');
-// if (strlen($_SESSION['aid']==0)) {
-//   header('location:logout.php');
-//   } else{ ?>
+if(!empty($_SESSION['email']))
+ {
+     $temp=$_SESSION['email']; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -154,7 +154,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 
 			<?php 
 								  
-									$sql = "select * from orders";
+									$sql = "select * from orders where email='$temp'";
 									$Resulta = mysqli_query($con,$sql);
                                     $cnt=1;
 									while($Rows = mysqli_fetch_array($Resulta)):; 
@@ -171,7 +171,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 									
 									
 					
-									<td><a href="javascript:void(0);" onClick="popUpWindow('track-order.php?oid=<?php echo htmlentities($row['orderid']);?>');" title="Track order"> </td>
+									<td><a href="javascript:void(0);" onClick="popUpWindow('track-order.php?oid=<?php echo htmlentities($row['orderid']);?>');" title="Track order">Track order </td>
 
  </tr>
  <?php 
@@ -267,6 +267,15 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 	<script src="dist/js/irregular-data-series.js"></script>
     <script src="dist/js/init.js"></script>
 	
+	<?php
+    }
+    else
+    {
+        header("location:login.html");
+    }
+    ?>
+
+
 </body>
 
 </html>
