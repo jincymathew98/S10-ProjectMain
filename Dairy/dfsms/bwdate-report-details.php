@@ -2,16 +2,11 @@
 session_start();
 //error_reporting(0);
 include('includes/config.php');
-if (strlen($_SESSION['aid']==0)) {
-  header('location:logout.php');
-  } else{
+// if (strlen($_SESSION['aid']==0)) {
+//   header('location:logout.php');
+//   } else{
 // Code for deletion   
-if(isset($_GET['del'])){    
-$cmpid=substr(base64_decode($_GET['del']),0,-5);
-$query=mysqli_query($con,"delete from tblcategory where id='$cmpid'");
-echo "<script>alert('Category record deleted.');</script>";   
-echo "<script>window.location.href='manage-categories.php'</script>";
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,33 +70,31 @@ $tdate=$_POST['todate'];
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>Invocie Number</th>
-                                                    <th>Customer Name</th>
-                                                    <th>Customer Contact no.</th>
-                                                    <th>Payment Mode</th>
-                                                    <th>Invoice Gen. Date</th>
-                                                    <th>Action</th>
+                                                    <th>Email</th>
+                                                    <th>Product Name</th>
+                                                    <th>Quantity</th>
+                                                    <th>Product Price</th>
+                                                    <th>Date</th>
+                                                   
                                                     
                                                 </tr>
                                             </thead>
                                             <tbody>
 <?php 
-$rno=mt_rand(10000,99999); 
-$query=mysqli_query($con,"select distinct InvoiceNumber,CustomerName,CustomerContactNo,PaymentMode,InvoiceGenDate  from tblorders where date(InvoiceGenDate) between '$fdate' and '$tdate'");
+
+$query=mysqli_query($con,"select distinct userid,productname,quantity,productprice,dateofselling  from tblsell where dateofselling between '$fdate' and '$tdate'");
 $cnt=1;
 while($row=mysqli_fetch_array($query))
 {    
 ?>                                                
 <tr>
 <td><?php echo $cnt;?></td>
-<td><?php echo $row['InvoiceNumber'];?></td>
-<td><?php echo $row['CustomerName'];?></td>
-<td><?php echo $row['CustomerContactNo'];?></td>
-<td><?php echo $row['PaymentMode'];?></td>
-<td><?php echo $row['InvoiceGenDate'];?></td>
-<td>
-<a href="view-invoice.php?invid=<?php echo base64_encode($row['InvoiceNumber'].$rno);?>" class="mr-25" data-toggle="tooltip" data-original-title="View Details" target="_blank"> <i class="glyphicon glyphicon-envelope"></i></a>
-</td>
+<td><?php echo $row['userid'];?></td>
+<td><?php echo $row['productname'];?></td>
+<td><?php echo $row['quantity'];?></td>
+<td><?php echo $row['productprice'];?></td>
+<td><?php echo $row['dateofselling'];?></td>
+
 </tr>
 <?php 
 $cnt++;
@@ -121,9 +114,7 @@ $cnt++;
             </div>
             <!-- /Container -->
 
-            <!-- Footer -->
-<?php include_once('includes/footer.php');?>
-            <!-- /Footer -->
+           
         </div>
         <!-- /Main Content -->
     </div>
@@ -153,4 +144,3 @@ $cnt++;
     <script src="dist/js/init.js"></script>
 </body>
 </html>
-<?php } ?>

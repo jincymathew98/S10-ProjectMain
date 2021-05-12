@@ -29,7 +29,7 @@
 
             <input class="search-field" placeholder="Search here..." name="product" required="required" />
 
-            <button class="search-button" type="submit" name="search"></button>    
+            <button class="btn btn-search" type="submit" name="search"><i class="fa fa-search fa-fw"></i></button>    
 
         </div>
     </form>

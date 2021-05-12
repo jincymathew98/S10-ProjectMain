@@ -46,9 +46,7 @@
 <li class="nav-item">
 <a class="nav-link" href="bwdate-report-ds.php">B/w Dates</a>
 </li>
-<li class="nav-item">
-<a class="nav-link" href="sales-report-ds.php">Sales</a>
-</li>
+
 </ul>
 </li>
 </ul>

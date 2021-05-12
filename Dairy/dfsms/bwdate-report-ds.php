@@ -2,23 +2,10 @@
 session_start();
 //error_reporting(0);
 include('includes/config.php');
-if (strlen($_SESSION['aid']==0)) {
-  header('location:logout.php');
-  } else{
+// if (strlen($_SESSION['aid']==0)) {
+//   header('location:logout.php');
+//   } else{
 // Add company Code
-if(isset($_POST['submit']))
-{
-//Getting Post Values
-$cname=$_POST['companyname'];   
-$query=mysqli_query($con,"insert into tblcompany(CompanyName) values('$cname')"); 
-if($query){
-echo "<script>alert('Company added successfully.');</script>";   
-echo "<script>window.location.href='add-company.php'</script>";
-} else{
-echo "<script>alert('Something went wrong. Please try again.');</script>";   
-echo "<script>window.location.href='add-company.php'</script>";    
-}
-}
 
     ?>
 <!DOCTYPE html>
@@ -105,9 +92,6 @@ include_once('includes/sidebar.php');
 </div>
 
 
-            <!-- Footer -->
-<?php include_once('includes/footer.php');?>
-            <!-- /Footer -->
 
         </div>
         <!-- /Main Content -->
@@ -128,4 +112,3 @@ include_once('includes/sidebar.php');
 
 </body>
 </html>
-<?php } ?>
