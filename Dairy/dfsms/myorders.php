@@ -4,7 +4,8 @@ session_start();
 include('includes/config.php');
 if(!empty($_SESSION['email']))
  {
-     $temp=$_SESSION['email']; ?>
+     $temp=$_SESSION['email']; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -112,28 +113,18 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 	<div class="container">
 		<div class="breadcrumb-inner">
 			<ul class="list-inline list-unstyled">
-				<li><a href="dashboard.php">Home / My orders</li></a>
-				
+				<li><a href="dashboard.php">Home / My orders</li></a>	
 			</ul>
 		</div><!-- /.breadcrumb-inner -->
 	</div><!-- /.container -->
 </div><!-- /.breadcrumb -->
 
-<div class="body-content outer-top-xs">
-	<div class="container">
-		<div class="row inner-bottom-sm">
-			<div class="shopping-cart">
-				<div class="col-md-12 col-sm-12 shopping-cart-table ">
-	<div class="table-responsive">
-<form name="cart" method="post">	
+
+	
 
 		<table class="table table-bordered">
 			<thead>
-				
-			
-				
-				
-				
+		
 				
 				<tr>
 					<th class="cart-romove item">#</th>
@@ -154,7 +145,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 
 			<?php 
 								  
-									$sql = "select * from orders where email='$temp'";
+									$sql = "select name,email,phone,address,payment_mode,products from orders where email='$temp'";
 									$Resulta = mysqli_query($con,$sql);
                                     $cnt=1;
 									while($Rows = mysqli_fetch_array($Resulta)):; 
