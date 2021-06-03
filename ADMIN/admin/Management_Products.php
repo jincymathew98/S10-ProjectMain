@@ -206,8 +206,8 @@
 							
 							
 							<div class="form-group">
-							  <label for="ProductCategory">Product Code:</label>
-							  <input type="text" name="productcode" class="form-control" id="productcode" placeholder="Enter Product Code" required>
+							  <label for="ProductCategory">Product Description:</label>
+							  <input type="text" name="productcode" class="form-control" id="productcode" placeholder="Enter Product Description" required>
 							</div>
 
 

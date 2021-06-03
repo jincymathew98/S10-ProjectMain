@@ -28,7 +28,7 @@
 		{
 		
 		
-		$sql = "INSERT INTO `tbl_products`(`product_name`, `ProductBrand`, `ProductSize`,`product_price`,  `ProductImageName`, `product_image`,`product_code`)" . 
+		$sql = "INSERT INTO `tbl_products`(`product_name`, `ProductBrand`, `ProductSize`,`product_price`,  `ProductImageName`, `product_image`,`Description`)" . 
 		"VALUES ('$_ProductName','$_ProductBrand','$_ProductSize','$_ProductPrice','$name','$image','$_ProductCode')";
 
 		if( mysqli_query($Conn,$sql))

@@ -98,19 +98,22 @@ include_once('includes/sidebar.php');
 			  
               <div class="card-body">
                 <h4 class="card-title text-primary"><?php echo $row['product_name']; ?> </h4>
+                <h6><?php echo ($row['ProductSize']); ?></h6> 
                 <h5><?php echo number_format($row['product_price'],2); ?>/-</h5>
+                <h5><?php echo $row['Description']; ?></h5>
+
                 <h6 style="color:red"><?php echo $row['action']; ?></h6>
               </div>
 			  
               <div class="card-footer">
 				<form class="form-submit">
-					<input type="hidden" class="pid" value="<?php echo $row['product_id']; ?>">
+					<input type="hidden" class="pid" value="<?php echo $row['product_id'];?>">
 					<input type="hidden" class="pname" value="<?php echo $row['product_name']; ?>">
 					<input type="hidden" class="pprice" value="<?php echo $row['product_price']; ?>">
 					<input type="hidden" class="pimage" value="<?php echo $row['product_image']; ?>">
-					<input type="hidden" class="pcode" value="<?php echo $row['product_code']; ?>">
+					<input type="hidden" class="pcode" value="<?php echo $row['Description']; ?>">
 					<button id="addItem" class="btn btn-success btn-md">Add to Cart</button>
-          <a href="productdetails.php"><U>Send reviews</U></a>
+          <a href="RATING/index.php"><U>Send reviews</U></a>
 				</form>
               </div>
 			  
