@@ -2,6 +2,8 @@
 require_once "includes/dbconfig.php";
 require_once "includes/config.php";
 
+
+
 session_start();
 if(empty($_SESSION['email']))
  {
@@ -113,7 +115,7 @@ $allItems = implode(", ", $items);
 				<h5><b>Total Amount Payable : </b><?php echo number_format($grand_total)?>/- </h5>
 			</div>
 			
-			<form method="post" id="placeOrder">
+			<form method="post" id="placeOrder" >
 			
 				<input type="hidden" name="products" value="<?php echo $allItems ?>">
 				<input type="hidden" name="grand_total" value="<?php echo $grand_total ?>">

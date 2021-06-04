@@ -98,7 +98,7 @@ while($row=mysqli_fetch_array($query))
 
 <td><input type="text" class="product-quantity" name="quantity" value="1" size="2" /></td>
 <td>
-<input type="submit" value="Add to Cart" class="btnAddAction" >
+<button id="addItem" class="btn btn-success btn-md">Add to Cart</button>
 </td>
 </tr>
 </form>

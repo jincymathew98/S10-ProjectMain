@@ -2,6 +2,7 @@
 session_start();
 //error_reporting(0);
 include('includes/config.php');
+include('RATING/process.php');
 // if (strlen($_SESSION['aid']==0)) {
 //   header('location:logout.php');
 //   } else{ ?>
@@ -17,6 +18,13 @@ include('includes/config.php');
     <link href="vendors/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css">
     <link href="vendors/jquery-toast-plugin/dist/jquery.toast.min.css" rel="stylesheet" type="text/css">
     <link href="dist/css/style.css" rel="stylesheet" type="text/css">
+<style>
+h6
+{
+  font-family: Bradley Hand, cursive;
+  font-style : Italic;
+}
+</style>
 </head>
 
 <body>
@@ -97,14 +105,26 @@ include_once('includes/sidebar.php');
               <a href="#"><img class="card-img-top" src="data:image;base64,<?php echo $row['product_image']; ?>" width="400px" height="200px"></a>
 			  
               <div class="card-body">
-                <h4 class="card-title text-primary"><?php echo $row['product_name']; ?> </h4>
-                <h6><?php echo ($row['ProductSize']); ?></h6> 
-                <h5><?php echo number_format($row['product_price'],2); ?>/-</h5>
-                <h5><?php echo $row['Description']; ?></h5>
+                <h4 class="card-title text-primary"><?php echo $row['product_name']; ?>  ( <?php echo ($row['ProductSize']); ?> ) </h4>
+          
+                <h5>Rs.<?php echo number_format($row['product_price'],2); ?>/-</h5>
+           
+                <h6>Description: <?php echo $row['Description']; ?></h6>
+               
+                <h5 style="color:red"><?php echo $row['action']; ?></h5>
+               
+             
 
-                <h6 style="color:red"><?php echo $row['action']; ?></h6>
-              </div>
-			  
+             
+			<h3 align="center"><b><?php echo round($AVGRATE,1);?></b> <i class="fa fa-star" data-rating="2" style="font-size:20px;color:#ff9f00;"></i></h3>
+			<!-- <p><?=$Total;?> ratings and <?=$Total_review;?> reviews</p> -->
+		</div>
+
+             
+
+
+
+          
               <div class="card-footer">
 				<form class="form-submit">
 					<input type="hidden" class="pid" value="<?php echo $row['product_id'];?>">
@@ -113,7 +133,7 @@ include_once('includes/sidebar.php');
 					<input type="hidden" class="pimage" value="<?php echo $row['product_image']; ?>">
 					<input type="hidden" class="pcode" value="<?php echo $row['Description']; ?>">
 					<button id="addItem" class="btn btn-success btn-md">Add to Cart</button>
-          <a href="RATING/index.php"><U>Send your feedback </U></a>
+          <a href="productdetails.php"><U>Send your feedback </U></a>
 				</form>
               </div>
 			  
