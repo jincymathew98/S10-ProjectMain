@@ -117,9 +117,18 @@ if(!empty($_SESSION['email']))
                                 href="vendor_management.php" aria-expanded="false"><i class="me-3 fa fa-columns"
                                     aria-hidden="true"></i><span class="hide-menu"> View User</span></a></li>
 
-                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="invoices.php" aria-expanded="false"><i class="me-3 fa fa-columns"
-                                    aria-hidden="true"></i><span class="hide-menu"> Reports</span></a></li>
+                                <li class="sidebar-item"> 
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="invoices.php" aria-expanded="false">
+                                <i class="me-3 fa fa-columns" aria-hidden="true">
+                                </i>
+                                <span class="hide-menu"> Reports</span>
+                                </a>
+                                </li>
+                                
+
+                               
+
+
 
                                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="viewseller.php" aria-expanded="false"><i class="me-3 fa fa-columns"

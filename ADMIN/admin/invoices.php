@@ -229,6 +229,9 @@ $con=mysqli_connect("localhost","root","","test");
 
                 </div>
                 <!-- /Title -->
+                <div align ="right">
+                <a class="btn btn-primary" href="userdata_excel.php" role="button">Generate</a>
+                </div><br>
 
                 <!-- Row -->
                 <div class="row">
