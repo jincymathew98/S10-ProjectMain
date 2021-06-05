@@ -240,6 +240,7 @@ $tdate=$_POST['todate'];
                                                     <th>Product Price</th>
                                                     <th>Date</th>
                                                    
+                                                   
                                                     
                                                 </tr>
                                             </thead>
