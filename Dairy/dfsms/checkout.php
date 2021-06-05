@@ -115,7 +115,7 @@ $allItems = implode(", ", $items);
 				<h5><b>Total Amount Payable : </b><?php echo number_format($grand_total)?>/- </h5>
 			</div>
 			
-			<form method="post" id="placeOrder" action="user_payment.php" >
+			<form method="post" id="placeOrder"  >
 			
 				<input type="hidden" name="products" value="<?php echo $allItems ?>">
 				<input type="hidden" name="grand_total" value="<?php echo $grand_total ?>">
@@ -171,7 +171,7 @@ $allItems = implode(", ", $items);
 			e.preventDefault();
 			
 			$.ajax({
-				url: "user_payment.php",
+				url: "action.php",
 				method: "post",
 				data: $("form").serialize()+"&action=order",
 				success: function(response){

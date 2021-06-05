@@ -127,18 +127,18 @@ if(isset($_POST["action"]) && isset($_POST["action"])=="order")
 	
 	$insert_stmt->execute();
 	
-	// $data.='<div class="text-center">
-	// 			<h1 class="display-4 mt-2 text-danger">Thank You!</h1>
-	// 			<h2>Your Order Placed Successfully!</h2>
-	// 			<h4 class="bg-danger text-light rounded p-2">Items Purchased : '.$products.'</h4>
-	// 			<h4>Your Name : '.$name.' </h4>			
-	// 			<h4>Your E-mail : '.$email.' </h4>			
-	// 			<h4>Your Phone : '.$phone.'  </h4>			
-	// 			<h4>Total Amount Paid : '.number_format($grand_total,2).' </h4>			
-	// 			<h4>Payment Mode : '.$pmode.' </h4>			
+	$data.='<div class="text-center">
+				<h1 class="display-4 mt-2 text-danger">Thank You!</h1>
+				<h2>Your Order Placed Successfully!</h2>
+				<h4 class="bg-danger text-light rounded p-2">Items Purchased : '.$products.'</h4>
+				<h4>Your Name : '.$name.' </h4>			
+				<h4>Your E-mail : '.$email.' </h4>			
+				<h4>Your Phone : '.$phone.'  </h4>			
+				<h4>Total Amount Paid : '.number_format($grand_total,2).' </h4>			
+				<h4>Payment Mode : '.$pmode.' </h4>			
 				
-	// 		</div>';
+			</div>';
 			
-	// echo $data;		
+	echo $data;		
 }
 ?>
