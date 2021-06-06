@@ -135,7 +135,8 @@ if(isset($_POST["action"]) && isset($_POST["action"])=="order")
 				<h4>Your E-mail : '.$email.' </h4>			
 				<h4>Your Phone : '.$phone.'  </h4>			
 				<h4>Total Amount Paid : '.number_format($grand_total,2).' </h4>			
-				<h4>Payment Mode : '.$pmode.' </h4>			
+				<h4>Payment Mode : '.$pmode.' </h4>		
+				<a href="user_payment.php" class="btn btn-danger">Pay Now</a>	
 				
 			</div>';
 			

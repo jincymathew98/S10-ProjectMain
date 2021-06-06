@@ -13,7 +13,7 @@ $sql=mysqli_query($con,"SELECT p_swrd FROM tbl_login where p_swrd='$oldpass' && 
 $num=mysqli_fetch_array($sql);
 if($num>0)
 {
- $con=mysqli_query($con,"update tbl_login set p_swrd=' $newpassword' where email='$uname'");
+ $con=mysqli_query($con,"update tbl_login set p_swrd='$newpassword' where email='$uname'");
 
  
  

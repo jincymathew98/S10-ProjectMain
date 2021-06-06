@@ -39,12 +39,12 @@
 <li class="nav-item">
 <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#reports_drp">
 <i class="ion ion-ios-today"></i>
-<span class="nav-link-text">Reports</span></a>
+<span class="nav-link-text"> Selling Reports</span></a>
 <ul id="reports_drp" class="nav flex-column collapse collapse-level-1">
 <li class="nav-item">
 <ul class="nav flex-column">
 <li class="nav-item">
-<a class="nav-link" href="bwdate-report-ds.php">B/w Dates</a>
+<a class="nav-link" href="viewseller.php">B/w Dates</a>
 </li>
 
 </ul>
