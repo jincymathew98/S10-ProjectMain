@@ -145,7 +145,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 
 			<?php 
 								  
-									$sql = "select name,email,phone,address,payment_mode,products from orders where email='$temp'";
+									$sql = "select * from orders where email='$temp'";
 									$Resulta = mysqli_query($con,$sql);
                                     $cnt=1;
 									while($Rows = mysqli_fetch_array($Resulta)):; 
@@ -159,10 +159,24 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 									<td><?php echo $Rows["address"]; ?></td>
 									<td><?php echo $Rows["payment_mode"]; ?></td>
 									<td><?php echo $Rows["products"]; ?></td>
-									
-									
+									<?php
+									if ($Rows['status']== 0)
+                         {  
+                                  echo "<td> Waiting for action </td>";
+                            
+                      }
+                
+                    
+                 elseif($Rows['status'] == 1)
+                     {
+                            echo "<td>Order confirmed</td>" ;
+                     }
+                 else {
+                        echo "<td> Cancelled </td>" ;
+                     } 
+					?>
 					
-									<td><a href="javascript:void(0);" onClick="popUpWindow('track-order.php?oid=<?php echo htmlentities($row['orderid']);?>');" title="Track order">Track order </td>
+	<!-- <td><a href="javascript:void(0);" onClick="popUpWindow('track-order.php?oid=<?php echo htmlentities($row['orderid']);?>');" title="Track order">Track order </td> -->
 
  </tr>
  <?php 

@@ -119,11 +119,11 @@ if(!empty($_SESSION['email']))
 
                                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="invoices.php" aria-expanded="false"><i class="me-3 fa fa-columns"
-                                    aria-hidden="true"></i><span class="hide-menu"> Reports</span></a></li>
+                                    aria-hidden="true"></i><span class="hide-menu"> Buyer Reports</span></a></li>
 
                                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="viewseller.php" aria-expanded="false"><i class="me-3 fa fa-columns"
-                                    aria-hidden="true"></i><span class="hide-menu"> View</span></a></li>
+                                href="includes/bwdate.php" aria-expanded="false"><i class="me-3 fa fa-columns"
+                                    aria-hidden="true"></i><span class="hide-menu"> Seller Reports</span></a></li>
 
                                    
 
@@ -258,7 +258,7 @@ $con=mysqli_connect("localhost","root","","test");
                                             <tbody>
 <?php 
 
-$query=mysqli_query($con,"select  name,email,phone,address,payment_mode,products,paid_amount  from orders");
+$query=mysqli_query($con,"select  order_id,name,email,phone,address,payment_mode,products,paid_amount  from orders");
 $cnt=1;
 while($row=mysqli_fetch_array($query))
 {    
@@ -273,8 +273,12 @@ while($row=mysqli_fetch_array($query))
 <td><?php echo $row['paid_amount'];?></td>
 
 <td>
-<a href="pdf.php" >Download</a>
+<?php echo "<td><a href='approve.php?x=" .$row['order_id']. " ' class = 'btn btn-success btn-sm'><i class='fa fa-check' aria-hidden='true'></i></a></a>"; 
+                                             
+                                             echo "<a href='reject.php?y=" .$row['order_id']. "' class = 'btn btn-danger btn-sm' aria-label= 'Left Align'>  <i class='fa fa-times' aria-hidden='true'></i></a>";
+                                             ?>
 </td>
+
 </tr>
 <?php 
 $cnt++;

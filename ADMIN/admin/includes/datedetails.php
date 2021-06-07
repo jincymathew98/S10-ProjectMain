@@ -220,7 +220,7 @@ $tdate=$_POST['todate'];
     <span class="feather-icon"><i data-feather="database"></i></span></span>Report from <?php echo $fdate?> to <?php echo $tdate?></h4>
                 </div>
                 <div align ="right">
-                <a class="btn btn-primary" href="../userdata_excel.php" role="button">Generate</a>
+                <a class="btn btn-primary" href="../sellerdata.php" role="button">Generate</a>
                 </div><br>
 
                 <!-- Row -->
@@ -239,8 +239,7 @@ $tdate=$_POST['todate'];
                                                     <th>Quantity</th>
                                                     <th>Product Price</th>
                                                     <th>Date</th>
-                                                   
-                                                   
+                                                    
                                                     
                                                 </tr>
                                             </thead>
