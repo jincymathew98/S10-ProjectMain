@@ -11,8 +11,7 @@
 </a>
 </li>
 
-
-                    
+              
 
 
 
@@ -54,7 +53,7 @@
 
 
 <li class="nav-item">
-<a class="nav-link" href="RATING/index.php">
+<a class="nav-link" href="index.php">
 <i class="ion ion-ios-keypad"></i>
 <span class="nav-link-text">Feedbacks & Reviews</span>
 </a>
