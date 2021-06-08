@@ -12,7 +12,7 @@
 </li>
 
 
-                          
+                    
 
 
 
@@ -47,11 +47,19 @@
 <li class="nav-item">
 <a class="nav-link" href="viewseller.php">B/w Dates</a>
 </li>
+</ul>
+</li>
+</ul>
+</li>
 
-</ul>
-</li>
-</ul>
-</li>
+
+<li class="nav-item">
+<a class="nav-link" href="RATING/index.php">
+<i class="ion ion-ios-keypad"></i>
+<span class="nav-link-text">Feedbacks & Reviews</span>
+</a>
+</li>   
+
 
 </ul>
                  

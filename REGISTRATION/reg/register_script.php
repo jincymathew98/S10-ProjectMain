@@ -38,7 +38,7 @@ if(mysqli_query($con,$sql))
 	    
      
      ?>
-     <script>alert("Records inserted successfully");  
+     <script>alert("User registered successfully");  
      location.href="../../LOGIN/log/login.html";</script>
      <?php
         

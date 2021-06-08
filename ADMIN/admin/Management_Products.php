@@ -124,7 +124,29 @@
                                     class="hide-menu">View User</span></a>
                         </li>
                         
-                       
+                        <li class="sidebar-item"> 
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="invoices.php" aria-expanded="false">
+                                <i class="me-3 fa fa-columns" aria-hidden="true">
+                                </i>
+                                <span class="hide-menu"> Buyer Reports</span>
+                                </a>
+                                </li>
+                                
+
+                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="includes/bwdate.php" aria-expanded="false"><i class="me-3 fa fa-columns"
+                                    aria-hidden="true"></i><span class="hide-menu"> Seller Reports</span></a></li>
+
+
+
+                                   
+
+                                   
+
+
+                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="logout.php" aria-expanded="false"><i class="me-3 fa fa-columns"
+                                    aria-hidden="true"></i><span class="hide-menu"> Logout</span></a></li>
                         
                     </ul>
 

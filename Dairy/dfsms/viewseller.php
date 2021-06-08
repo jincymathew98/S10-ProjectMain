@@ -58,24 +58,22 @@ include_once('includes/sidebar.php');
   
   <!-- Page Content -->
   
-  <div text-align ="right">
+  <div align ="right">
     <a class="btn btn-primary" href="sellerdata.php" role="button">Generate</a>
  </div>
               
-
+<br>
 <table class="table">
     <thead >
-      <tr  class="table-primary">
-     <br> <th scope="col">#</th>
-        <th scope="col">Email</th>
-        <th scope="col">Quantity</th>
-        <th scope="col">Amount</th>
-        <th scope="col">Date of selling</th>
-        <th scope="col">Action</th>
-
-
-      </tr>
-    </thead>
+      <tr  class="table-primary"><br>
+      <th >#</th>
+        <th >Email</th>
+        <th>Quantity</th>
+        <th >Amount</th>
+        <th>Date of selling</th>
+        <th >Action </th>
+        </tr>
+      </thead>
    
     <?php 
 									//require 'Connection.php';
@@ -84,6 +82,7 @@ include_once('includes/sidebar.php');
                                     $cnt=1;
 									while($Rows = mysqli_fetch_array($Resulta)):; 
                                     ?>
+                                     
 								<tr style="color: black">
 	
                                 <td><?php echo $cnt;?></td>
@@ -103,13 +102,13 @@ include_once('includes/sidebar.php');
                     
                     elseif($Rows['status'] == 1)
                         {
-                            echo "<td>Approved</td>" ;
+                            echo "<td>Selling confirmed</td>" ;
                         }
                     else {
-                        echo "<td> Rejected </td>" ;
+                        echo "<td> Selling cancelled  </td>" ;
                     }
 						?>	
-									</td>
+			</td></tr> 
 									<?php 
                                   
                                  $cnt++;

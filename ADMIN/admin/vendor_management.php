@@ -4,6 +4,8 @@
 
 <head>
 
+
+
 <script>
 function toggleuser(element){
     var row = element.parentElement.parentElement;
@@ -54,8 +56,10 @@ function toggleuser(element){
 <![endif]-->
 
 
-
+</head>
 <body>
+
+
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
@@ -105,18 +109,7 @@ function toggleuser(element){
                     <!-- ============================================================== -->
                     <!-- toggle and nav items -->
                     <!-- ============================================================== -->
-                    <ul class="navbar-nav me-auto mt-md-0 ">
-                        <!-- ============================================================== -->
-                        <!-- Search -->
-                        <!-- ============================================================== -->
-
-                        <li class="nav-item hidden-sm-down">
-                            <form class="app-search ps-3">
-                                <input type="text" class="form-control" placeholder="Search for..."> <a
-                                    class="srh-btn"><i class="ti-search"></i></a>
-                            </form>
-                        </li>
-                    </ul>
+                   
 
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
@@ -154,7 +147,29 @@ function toggleuser(element){
                                 href="vendor_management.php" aria-expanded="false"><i class="me-3 fa fa-columns"
                                     aria-hidden="true"></i><span class="hide-menu">View user</span></a></li>
                        
-                        
+                                    <li class="sidebar-item"> 
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="invoices.php" aria-expanded="false">
+                                <i class="me-3 fa fa-columns" aria-hidden="true">
+                                </i>
+                                <span class="hide-menu"> Buyer Reports</span>
+                                </a>
+                                </li>
+                                
+
+                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="includes/bwdate.php" aria-expanded="false"><i class="me-3 fa fa-columns"
+                                    aria-hidden="true"></i><span class="hide-menu"> Seller Reports</span></a></li>
+
+
+
+                                   
+
+                                   
+
+
+                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="logout.php" aria-expanded="false"><i class="me-3 fa fa-columns"
+                                    aria-hidden="true"></i><span class="hide-menu"> Logout</span></a></li>
                     </ul>
 
                 </nav>
@@ -241,11 +256,15 @@ function toggleuser(element){
                           <div class="col-xl-12">
                              <div class="card">
                                 <div class="card-body">
-                                   <h4 class="box-title">USER MANAGEMENT </h4>
-                                  
+                                   <h4 class="box-title"><center>USER MANAGEMENT</center> </h4>
+                                   <div align="right">
+                                   <a href="adduser.php" class="btn btn-primary">Add User</a>
+                                   </div>	
                                 </div>
+                               
                                 <div class="card-body--">
                                    <div class="table-stats order-table ov-h">
+                                 
                                       <table class="table" > 
                                          <thead>
                                             <tr>

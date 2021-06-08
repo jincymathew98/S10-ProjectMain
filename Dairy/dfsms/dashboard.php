@@ -116,7 +116,7 @@ include_once('includes/sidebar.php');
              
 
              
-			<h3 align="center"><b><?php echo round($AVGRATE,1);?></b> <i class="fa fa-star" data-rating="2" style="font-size:20px;color:#ff9f00;"></i></h3>
+			<!-- <h3 align="center"><b><?php echo round($AVGRATE,1);?></b> <i class="fa fa-star" data-rating="2" style="font-size:20px;color:#ff9f00;"></i></h3> -->
 			<!-- <p><?=$Total;?> ratings and <?=$Total_review;?> reviews</p> -->
 		</div>
 
@@ -134,7 +134,7 @@ include_once('includes/sidebar.php');
 					<input type="hidden" class="pcode" value="<?php echo $row['Description']; ?>">
 					<button id="addItem" class="btn btn-success btn-md">Add to Cart</button>
     
-                <a class="btn btn-danger" href="user_payment.php" role="button">Buy Now</a>
+                <a class="btn btn-danger" href="paynow.php" role="button">Buy Now</a>
               
           <!-- <a href="productdetails.php"><U>Send your feedback </U></a> -->
 				</form>

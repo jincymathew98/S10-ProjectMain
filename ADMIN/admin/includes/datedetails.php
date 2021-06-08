@@ -121,21 +121,20 @@ if(!empty($_SESSION['email']))
                                 <a class="sidebar-link waves-effect waves-dark sidebar-link" href="invoices.php" aria-expanded="false">
                                 <i class="me-3 fa fa-columns" aria-hidden="true">
                                 </i>
-                                <span class="hide-menu"> Reports</span>
+                                <span class="hide-menu">Buyer Reports</span>
                                 </a>
                                 </li>
                                 
 
                                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="includes/bwdate.php" aria-expanded="false"><i class="me-3 fa fa-columns"
-                                    aria-hidden="true"></i><span class="hide-menu"> B/W Dates</span></a></li>
+                                    aria-hidden="true"></i><span class="hide-menu"> Seller Reports</span></a></li>
 
 
 
                                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="viewseller.php" aria-expanded="false"><i class="me-3 fa fa-columns"
-                                    aria-hidden="true"></i><span class="hide-menu"> View</span></a></li>
-
+                                href="feedback.php" aria-expanded="false"><i class="me-3 fa fa-columns"
+                                    aria-hidden="true"></i><span class="hide-menu"> View Feedbacks</span></a></li>
                                    
 
 
@@ -235,10 +234,10 @@ $tdate=$_POST['todate'];
                                                 <tr>
                                                     <th>#</th>
                                                     <th>Email</th>
-                                                    <th>Product Name</th>
                                                     <th>Quantity</th>
                                                     <th>Product Price</th>
                                                     <th>Date</th>
+                                                    <!-- <th>Action</th> -->
                                                     
                                                     
                                                 </tr>
@@ -246,7 +245,7 @@ $tdate=$_POST['todate'];
                                             <tbody>
 <?php 
 
-$query=mysqli_query($con,"select distinct userid,productname,quantity,productprice,dateofselling  from tblsell where dateofselling between '$fdate' and '$tdate'");
+$query=mysqli_query($con,"select distinct sellid,userid,productname,quantity,productprice,dateofselling  from tblsell where dateofselling between '$fdate' and '$tdate'");
 $cnt=1;
 while($row=mysqli_fetch_array($query))
 {    
@@ -254,10 +253,19 @@ while($row=mysqli_fetch_array($query))
 <tr>
 <td><?php echo $cnt;?></td>
 <td><?php echo $row['userid'];?></td>
-<td><?php echo $row['productname'];?></td>
 <td><?php echo $row['quantity'];?></td>
 <td><?php echo $row['productprice'];?></td>
 <td><?php echo $row['dateofselling'];?></td>
+<!-- <td>
+<?php echo "<td><a href='approvesell.php?x=" .$row['sellid']. " ' class = 'btn btn-success '>
+Confirm</a>"; 
+                                             
+ echo "<a href='rejectsell.php?y=" .$row['sellid']. "' class = 'btn btn-danger ' aria-label= 'Left Align'> 
+ Cancel</a>";
+                                             ?>
+
+</td> -->
+
 
 </tr>
 <?php 

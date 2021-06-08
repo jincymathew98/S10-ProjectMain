@@ -1,6 +1,5 @@
 <?php
 	include'process.php';
-    include 'submit.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,10 +49,24 @@
 	</div>
 		
 	
-	
+	<div id="rating_div">
+				<div class="star-rating">
+					<span class="fa divya fa-star-o" data-rating="1" style="font-size:20px;"></span>
+					<span class="fa fa-star-o" data-rating="2" style="font-size:20px;"></span>
+					<span class="fa fa-star-o" data-rating="3" style="font-size:20px;"></span>
+					<span class="fa fa-star-o" data-rating="4" style="font-size:20px;"></span>
+					<span class="fa fa-star-o" data-rating="5" style="font-size:20px;"></span>
+					<input type="hidden" name="whatever3" class="rating-value" value="1">
+				</div>
+	</div>
 </div>
 </div><br>
-
+<input type="hidden" name="demo_id" id="demo_id" value="1">
+<div class="col-md-4">
+<input type="text" class="form-control" name="email" id="email" placeholder="Email Id"><br>
+<textarea class="form-control" rows="5" placeholder="Write your review here..." name="remark" id="remark" required></textarea><br>
+<p><button  class="btn btn-default btn-sm btn-info" id="srr_rating">Submit</button></p>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/index.js"></script>
 
