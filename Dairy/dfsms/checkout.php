@@ -137,7 +137,7 @@ $allItems = implode(", ", $items);
 					<textarea name="address" class="form-control" rows="3" cols="10" placeholder="Enter address"></textarea>
 				</div>
 				
-				<h6 class="text-center lead">Select Payment Mode</h6>
+				
 				<div class="form-group">
 					<select name="pmode" class="form-control">
 						<option value="">-- select payment --</option>
@@ -145,6 +145,9 @@ $allItems = implode(", ", $items);
 						<option value="card">Debit/credit Card</option>
 					</select>
 				</div>
+
+               
+				
 				
 				<div class="form-group">
 					<input type="submit" name="submit" class="btn btn-danger btn-block" value="Place Order">

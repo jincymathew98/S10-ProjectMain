@@ -1,8 +1,10 @@
 <?php
 session_start();
 include_once 'includes/config.php';
-$oid=intval($_GET['oid']);
- ?>
+if(!empty($_SESSION['email']))
+ {
+     $oid=$_SESSION['email']; 
+?>
 <script language="javascript" type="text/javascript">
 function f2()
 {
@@ -35,57 +37,42 @@ window.print();
       <td  class="fontkink1"><b>order Id:</b></td>
       <td  class="fontkink"><?php echo $oid;?></td>
     </tr>
+    </body>
     <?php 
-$ret = mysqli_query($con,"SELECT * FROM ordertrackhistory WHERE orderId='$oid'");
+$ret = mysqli_query($con,"SELECT order_id,status FROM orders WHERE email='$oid'");
 $num=mysqli_num_rows($ret);
 if($num>0)
 {
 while($row=mysqli_fetch_array($ret))
       {
-     ?>
-		
     
-    
-      <tr height="20">
-      <td class="fontkink1" ><b>At Date:</b></td>
-      <td  class="fontkink"><?php echo $row['postingDate'];?></td>
-    </tr>
-     <tr height="20">
-      <td  class="fontkink1"><b>Status:</b></td>
-      <td  class="fontkink"><?php echo $row['status'];?></td>
-    </tr>
-     <tr height="20">
-      <td  class="fontkink1"><b>Remark:</b></td>
-      <td  class="fontkink"><?php echo $row['remark'];?></td>
-    </tr>
 
-   
-    <tr>
-      <td colspan="2"><hr /></td>
-    </tr>
-   <?php } }
-else{
-   ?>
-   <tr>
-   <td colspan="2">Order Not Process Yet</td>
-   </tr>
-   <?php  }
-$st='Delivered';
-   $rt = mysqli_query($con,"SELECT * FROM orders WHERE id='$oid'");
-     while($num=mysqli_fetch_array($rt))
-     {
-     $currrentSt=$num['orderStatus'];
-   }
-     if($st==$currrentSt)
-     { ?>
-   <tr><td colspan="2"><b>
-      Product Delivered successfully </b></td>
-   <?php } 
- 
+									if ($row['status']== 1)
+                  {  
+                           echo "<td>Status: Waiting for action </td>";
+                     
+                  }
+         
+             
+          elseif($row['status'] == 0)
+              {
+                     echo "<td>Order confirmed</td>" ;
+              }
+          else 
+          {
+                 echo "<td> Cancelled </td>" ;
+          } 
+       }
+   } 
   ?>
-</table>
- </form>
-</div>
+              </table>
+              </form>
+              </div>
+
+<?php
+}
+?>
+
 
 </body>
 </html>

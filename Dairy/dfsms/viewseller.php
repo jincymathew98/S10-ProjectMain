@@ -79,7 +79,7 @@ include_once('includes/sidebar.php');
    
     <?php 
 									//require 'Connection.php';
-									$sql = "select userid,quantity,productprice,dateofselling from tblsell where userid='$temp'";
+									$sql = "select userid,quantity,productprice,dateofselling,status from tblsell where userid='$temp'";
 									$Resulta = mysqli_query($con,$sql);
                                     $cnt=1;
 									while($Rows = mysqli_fetch_array($Resulta)):; 
@@ -92,7 +92,7 @@ include_once('includes/sidebar.php');
 									<td><?php echo $Rows["productprice"]; ?></td>
 									<td><?php echo $Rows["dateofselling"]; ?></td>
                                   
-									<!-- <td>
+							<td>
                                     <?php
                                     if ($Rows['status']== 0)
                         {  
@@ -108,7 +108,7 @@ include_once('includes/sidebar.php');
                     else {
                         echo "<td> Rejected </td>" ;
                     }
-						?>		</td>	 -->
+						?>	
 									</td>
 									<?php 
                                   

@@ -159,7 +159,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 									<td><?php echo $Rows["address"]; ?></td>
 									<td><?php echo $Rows["payment_mode"]; ?></td>
 									<td><?php echo $Rows["products"]; ?></td>
-									<?php
+									<!-- <?php
 									if ($Rows['status']== 0)
                          {  
                                   echo "<td> Waiting for action </td>";
@@ -174,9 +174,9 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
                  else {
                         echo "<td> Cancelled </td>" ;
                      } 
-					?>
+					?> -->
 					
-	<!-- <td><a href="javascript:void(0);" onClick="popUpWindow('track-order.php?oid=<?php echo htmlentities($row['orderid']);?>');" title="Track order">Track order </td> -->
+	<td><a href="javascript:void(0);" onClick="popUpWindow('track-order.php?oid=<?php echo htmlentities($row['order_id']);?>');" title="Track order">Track order </td>
 
  </tr>
  <?php 

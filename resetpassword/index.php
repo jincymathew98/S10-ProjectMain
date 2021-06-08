@@ -10,18 +10,22 @@
     h2{
         margin-top:3em;
     }
+    div
+    {
+        text-align:center;
+    }
     </style>
 </head>
 <body >
     <div class="container">
         <h2>Reset Your Password</h2>
         <hr>
-        <div class="resetpasswordbox">
+        <div class="col-xs-3">
             <form action="resetpassword.php" method="post">
                 <div class="form-group">
-                    <input type="email" name="email" class="form-control">
+                    <input type="email" name="email" class="form-control" placeholder="Please enter your Email">
                 </div><br>
-                <div class="form-group">
+                <div class="col-xs-3">
                     <input type="submit" value="Reset Password now" class="btn btn-danger">
                 </div>
             </form>

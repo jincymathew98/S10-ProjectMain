@@ -33,7 +33,7 @@ $con=mysqli_connect("localhost","root","","test")or die("Couldn't connect to ser
                     $querry = "UPDATE tble_payment set Amount = Amount-$pay ";
                     $result = mysqli_query($con,$querry);
 
-                    header('location: ../user_payment.php');
+                    header('location: dashboard.php');
                     echo '<script>("Success!!!")</script>';
                 }
                 else{

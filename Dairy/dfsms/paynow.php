@@ -1,54 +1,89 @@
-<?php 
-$con=mysqli_connect("localhost","root","","test")or die("Couldn't connect to server");
+<?php
 session_start();
-if(!empty($_SESSION['email']))
-
-    {
-        $temp = $_SESSION['email'];
-    
-
-
-?>
-
-
+//error_reporting(0);
+include('includes/config.php');
+include('RATING/process.php');
+// if (strlen($_SESSION['aid']==0)) {
+//   header('location:logout.php');
+//   } else{ ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Dashboard</title>
+    <link href="vendors/vectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" type="text/css" />
+    <link href="vendors/jquery-toggles/css/toggles.css" rel="stylesheet" type="text/css">
+    <link href="vendors/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css">
+    <link href="vendors/jquery-toast-plugin/dist/jquery.toast.min.css" rel="stylesheet" type="text/css">
+    <link href="dist/css/style.css" rel="stylesheet" type="text/css">
+<style>
+h6
+{
+  font-family: Bradley Hand, cursive;
+  font-style : Italic;
+}
+</style>
+</head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<body>
     
-    <title>Payment</title>
+	
+	<!-- HK Wrapper -->
+	<div class="hk-wrapper hk-vertical-nav">
 
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+<?php include_once('includes/navbar.php');
+include_once('includes/sidebar.php');
+?>
+        <div id="hk_nav_backdrop" class="hk-nav-backdrop"></div>
+        <!-- /Vertical Nav -->
+        <!-- Main Content -->
+        <div class="hk-pg-wrapper">
+			<!-- Container -->
+            <div class="container-fluid mt-xl-50 mt-sm-30 mt-15">
+                <!-- Row -->
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hk-row">
 
-    <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+
+
+                        <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Home</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  
+  <!-- Template Custom CSS -->
+  <style type="text/css">
+  
+	body 
+	{
+		padding-top: 56px;
+	}
+
+  </style>
 
 </head>
 
-<body id="page-top">
+<body>
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-
-        
-           
-
-         
-
-           
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
+  <!-- Navigation -->
+  
+  <!-- Page Content -->
+  <div class="container-fluid">
                     <div class="row g-0">
                             <div class="col-md-4">
                             <img
@@ -71,7 +106,7 @@ if(!empty($_SESSION['email']))
                                     while ($row = mysqli_fetch_array($res))
                                     {
                                     ?>
-                                        <form name = "signup" method = "POST" action="php/payment.php">
+                                        <form name = "signup" method = "POST" action="payment.php">
                                         <div class ="form-group">
                                             <label>Name On Card</label>
                                             <input type ="text" class = "form-control" name="cardname" autocomplete="off" required value = <?php echo " ".$row['name']; ?>>
@@ -128,58 +163,30 @@ if(!empty($_SESSION['email']))
             </div>
             <!-- End of Main Content -->
 
-            <!-- Footer -->
-           
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
     </div>
-    <!-- End of Page Wrapper -->
+    <!-- /HK Wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="dist/js/jquery.slimscroll.js"></script>
+    <script src="dist/js/dropdown-bootstrap-extended.js"></script>
+    <script src="dist/js/feather.min.js"></script>
+    <script src="vendors/jquery-toggles/toggles.min.js"></script>
+    <script src="dist/js/toggle-data.js"></script>
+	<script src="vendors/waypoints/lib/jquery.waypoints.min.js"></script>
+	<script src="vendors/jquery.counterup/jquery.counterup.min.js"></script>
+    <script src="vendors/jquery.sparkline/dist/jquery.sparkline.min.js"></script>
+    <script src="vendors/vectormap/jquery-jvectormap-2.0.3.min.js"></script>
+    <script src="vendors/vectormap/jquery-jvectormap-world-mill-en.js"></script>
+	<script src="dist/js/vectormap-data.js"></script>
+    <script src="vendors/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="vendors/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
+    <script src="vendors/apexcharts/dist/apexcharts.min.js"></script>
+	<script src="dist/js/irregular-data-series.js"></script>
+    <script src="dist/js/init.js"></script>
+	
 </body>
 
 </html>
-
-<?php 
-    }
-    else{
-        header("location: login.php");
-    }
-?>
