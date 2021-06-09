@@ -2,7 +2,7 @@
 session_start();
 //error_reporting(0);
 include('includes/config.php');
-include('process.php');
+
 // if (strlen($_SESSION['aid']==0)) {
 //   header('location:logout.php');
 //   } else{ ?>
@@ -47,101 +47,165 @@ include_once('includes/sidebar.php');
                     <div class="col-xl-12">
                         <div class="hk-row">
 
-                        <!DOCTYPE html>
 
-<head>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
-	<link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
-	<link rel='stylesheet' href='https://raw.githubusercontent.com/kartik-v/bootstrap-star-rating/master/css/star-rating.min.css'>
 
+
+                        <head>
+   
+
+  
+   <link rel="stylesheet" href="css/style.css">
+   <!--Only for demo purpose - no need to add.-->
+   <link rel="stylesheet" href="css/demo.css" />
+   
 </head>
 <body>
-<div class="row container" >
-<div class="col-md-4 ">
-	<h3><b>Rating & Reviews</b></h3>
-	<div class="row">
-	
-		<div class="col-md-6">
-			<h3 align="center"><b><?php echo round($AVGRATE,1);?></b> <i class="fa fa-star" data-rating="2" style="font-size:20px;color:#ff9f00;"></i></h3>
-			<p><?=$Total;?> ratings and <?=$Total_review;?> reviews</p>
-		</div>
-		<div class="col-md-6">
-			<?php
-			while($db_rating= mysqli_fetch_array($rating)){
-			?>
-				<h4 align="center"><?=$db_rating['rating'];?> <i class="fa fa-star" data-rating="2" style="font-size:20px;color:green;"></i> Total <?=$db_rating['Total'];?></h4>
-				
-				
-			<?php	
-			}
-				
-			?>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">	
-		<?php
-			while($db_review= mysqli_fetch_array($review)){
-		?>
-				<h4><?=$db_review['rating'];?> <i class="fa fa-star" data-rating="2" style="font-size:20px;color:green;"></i> by <span style="font-size:14px;"><?=$db_review['email'];?></span></h4>
-				<p><?=$db_review['remark'];?></p>
-				<hr>
-		<?php	
-			}
-				
-		?>
-		</div>
-	</div>
-		
-	
-	<div id="rating_div">
-				<div class="star-rating">
-					<span class="fa divya fa-star-o" data-rating="1" style="font-size:20px;"></span>
-					<span class="fa fa-star-o" data-rating="2" style="font-size:20px;"></span>
-					<span class="fa fa-star-o" data-rating="3" style="font-size:20px;"></span>
-					<span class="fa fa-star-o" data-rating="4" style="font-size:20px;"></span>
-					<span class="fa fa-star-o" data-rating="5" style="font-size:20px;"></span>
-					<input type="hidden" name="whatever3" class="rating-value" value="1">
-				</div>
-	</div>
-</div>
-</div><br>
-<input type="hidden" name="demo_id" id="demo_id" value="1">
-<div class="col-md-4">
-<input type="text" class="form-control" name="email" id="email" placeholder="Email Id"><br>
-<textarea class="form-control" rows="5" placeholder="Write your review here..." name="remark" id="remark" required></textarea><br>
-<p><button  class="btn btn-default btn-sm btn-info" id="srr_rating">Submit</button></p>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="js/index.js"></script>
+       
+<div class="ScriptTop">
+   <div class="rt-container">
+       <div class="col-rt-4" id="float-right">
 
-</body>
-
-
-
-
-
-          
-            
-    <!-- /.row -->
-
-  </div>
-  <!-- /.container -->
-  
-  
-
-  
-
-
-
-</div>
-					
-            </div>
-            <!-- /Container -->
-			
+           <!-- Ad Here -->
            
+       </div>
+       <div class="col-rt-2">
+           
+       </div>
+   </div>
+</div>
+
+<header class="ScriptHeader">
+   <div class="rt-container">
+       <div class="col-rt-12">
+           <div class="rt-heading">
+               <h1>Feedback Form  </h1>
+              
+           </div>
+       </div>
+   </div>
+</header>
+
+<section>
+   <div class="rt-container">
+         <div class="col-rt-12">
+             <div class="Scriptcontent">
+             
+      
+<div class="feedback">
+<p>Dear Customer,<br>
+Thank you for getting your  services at our website. We would like to know how we performed. Please spare some moments to give us your valuable feedback as it will help us in improving our service.</p>
+
+<h4>Please rate your service experience for the following parameters</h4>
+
+<form method="post" action="feedback.php">
+<label>1. Your overall product experience with us ?</label><br>
+ 
+<span class="star-rating">
+ <input type="radio" name="rating1" value="1"><i></i>
+ <input type="radio" name="rating1" value="2"><i></i>
+ <input type="radio" name="rating1" value="3"><i></i>
+ <input type="radio" name="rating1" value="4"><i></i>
+ <input type="radio" name="rating1" value="5"><i></i>
+</span>
+
+ <div class="clear"></div> 
+ <hr class="survey-hr">
+<label>2. Friendliness and courtesy shown to you while recieving your products</label><br>
+<span class="star-rating">
+ <input type="radio" name="rating2" value="1"><i></i>
+ <input type="radio" name="rating2" value="2"><i></i>
+ <input type="radio" name="rating2" value="3"><i></i>
+ <input type="radio" name="rating2" value="4"><i></i>
+ <input type="radio" name="rating2" value="5"><i></i>
+</span>
+
+
+ <div class="clear"></div> 
+ <hr class="survey-hr">
+<label>3. Rate the quality of our products</label><br><br/>
+ <div style="color:grey">
+   <span style="float:left">
+    POOR
+   </span>
+   <span style="float:right">
+     BEST
+   </span>
+   
+ </div>
+<span class="scale-rating">
+ <label value="1">
+ <input type="radio" name="rating" >
+ <label style="width:100%;"></label>
+ </label>
+ <label value="2">
+ <input type="radio" name="rating" >
+ <label style="width:100%;"></label>
+ </label>
+ <label value="3">
+ <input type="radio" name="rating">
+ <label style="width:100%;"></label>
+ </label>
+ <label value="4">
+ <input type="radio" name="rating">
+ <label style="width:100%;"></label>
+ </label>
+ <label value="5">
+ <input type="radio" name="rating">
+ <label style="width:100%;"></label>
+ </label>
+ <label value="6">
+ <input type="radio" name="rating">
+ <label style="width:100%;"></label>
+ </label>
+ <label value="7">
+ <input type="radio" name="rating">
+ <label style="width:100%;"></label>
+ </label>
+ <label value="8">
+ <input type="radio" name="rating">
+ <label style="width:100%;"></label>
+ </label>
+ <label value="9">
+ <input type="radio" name="rating">
+ <label style="width:100%;"></label>
+ </label>
+ <label value="10">
+ <input type="radio" name="rating" value="10">
+ <label style="width:100%;"></label>
+ </label>
+</span>
+
+<div class="container">
+<hr class="survey-hr"> 
+<label for="m_3189847521540640526commentText">4. Name & Email:</label><br/><br/>
+<input type="text" class="form-control" placeholder="Name" name="name">&nbsp;
+
+<input type="email" class="form-control" placeholder="Email" name="email">
+
+
+</div>
+
+
+ <div class="clear"></div> 
+ <hr class="survey-hr"> 
+<label for="m_3189847521540640526commentText">6. Any Other suggestions:</label><br/><br/>
+<textarea cols="75" name="commentText" rows="5" style="100%"></textarea><br>
+<br>
+ <div class="clear"></div> 
+<input style="background:#43a7d5;color:#fff;padding:12px;border:0" type="submit" value="Submit your review" name="submit">&nbsp;
+</form>
+                 </div>
+          
+           </div>
+       </div>
+   </div>
+</section>
+    
+
+
+  
+                    
+              
         </div>
         <!-- /Main Content -->
 

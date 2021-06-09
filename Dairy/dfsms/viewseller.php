@@ -58,11 +58,12 @@ include_once('includes/sidebar.php');
   
   <!-- Page Content -->
   
-  <div align ="right">
+  <div class="container">
     <a class="btn btn-primary" href="sellerdata.php" role="button">Generate</a>
  </div>
               
 <br>
+<div class="container">
 <table class="table">
     <thead >
       <tr  class="table-primary"><br>
@@ -116,7 +117,7 @@ include_once('includes/sidebar.php');
                                 endwhile; ?>
   </table>
   
-
+</div>
 
 
 

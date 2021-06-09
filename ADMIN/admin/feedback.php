@@ -183,24 +183,24 @@ if(!empty($_SESSION['email']))
                 </div>
             </div>
             <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Sales chart -->
-                <!-- ============================================================== -->
-                <div class="row">
+               
         
-
-                <table class="table ">
+                <div class="container" >
+                <table class="table table-striped table-hover">
   <thead>
-    <tr>
+    <tr class="table-primary">
       <th scope="col">#</th>
+      <th scope="col">Name</th>
       <th scope="col">Email</th>
+      <th scope="col">Product rating</th>
+      <th scope="col">Quality rating</th>
+      
       <th scope="col">Remarks</th>
-      <th scope="col">Rating</th>
     </tr>
   </thead>
   <?php 
 									//require 'Connection.php';
-									$sql = "select email,remark,rating from rating_data ";
+									$sql = "select * from tbl_rating ";
 									$Resulta = mysqli_query($con,$sql);
                                     $cnt=1;
 									while($Rows = mysqli_fetch_array($Resulta)):; 
@@ -210,9 +210,11 @@ if(!empty($_SESSION['email']))
   <tr >
 	
     <td><?php echo $cnt;?></td>
+    <td><?php echo $Rows["name"]; ?></td>
         <td><?php echo $Rows["email"]; ?></td>
-        <td><?php echo $Rows["remark"]; ?></td>
+        <td><?php echo $Rows["rating1"]; ?></td>
         <td><?php echo $Rows["rating"]; ?></td>
+        <td><?php echo $Rows["text"]; ?></td>
 	
 	</tr> 
 									<?php 
@@ -224,8 +226,9 @@ if(!empty($_SESSION['email']))
     
   </tbody>
 </table>
+</div >
 </div>
-</div>
+
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->

@@ -230,28 +230,17 @@ button:hover {
 }
 
 /* Extra styles for the cancel button */
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
-}
 
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
-  float: left;
-  width: 50%;
-}
 
 /* Add padding to container elements */
-.container {
+
+div.container {
   padding: 16px;
+  text-align:center;
 }
 
 /* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+
 
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
@@ -262,30 +251,37 @@ button:hover {
 </style>
 <body>
 
-<form action="/action_page.php" style="border:1px solid #ccc">
+<form action="add-user.php" style="border:1px solid #ccc">
   <div class="container">
-    <h1>Register a user</h1>
+
+    <div><h3>Add a user</h3></div>
    
     <hr>
-
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
     
-    <label>
-      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-    </label>
-    
-    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+   <div class="container">
+    <input type="text" placeholder="Enter name" name="name" class="form-control" required>
+    </div>
 
-    <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
+    <div class="container">
+    <input type="email" placeholder="Enter Email" name="email" class="form-control"  required>
+    </div>
+
+    <div class="container">
+    <input type="text" placeholder="Enter Phone" name="phone" class="form-control"  required>
+    </div>
+
+    <div class="container">
+    <input type="password" placeholder="Enter Password" name="psw" class="form-control"  required>
+    </div>
+
+    <div class="container">
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" class="form-control"  required>
+    </div>
+  
+
+    <div class="container">
+    <input type="submit"  name="btn" class="btn btn-danger" value="ADD">
+     
     </div>
   </div>
 </form>

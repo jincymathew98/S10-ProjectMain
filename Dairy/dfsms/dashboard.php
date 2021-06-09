@@ -2,7 +2,7 @@
 session_start();
 //error_reporting(0);
 include('includes/config.php');
-include('process.php');
+
 // if (strlen($_SESSION['aid']==0)) {
 //   header('location:logout.php');
 //   } else{ ?>
