@@ -2,7 +2,7 @@
 session_start();
 
 
-$con=mysqli_connect("localhost","root","","test")or die("Couldn't connect to server");
+require('../include/dbconnection.php');
 //$id=$_GET['id'];
 
  

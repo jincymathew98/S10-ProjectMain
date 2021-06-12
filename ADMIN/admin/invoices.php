@@ -1,5 +1,5 @@
 <?php
-$con=mysqli_connect("localhost","root","","test");
+require('include/dbconnection.php');
 session_start();
 if(!empty($_SESSION['email']))
  {
@@ -182,7 +182,7 @@ if(!empty($_SESSION['email']))
                 <?php
 
 //error_reporting(0);
-$con=mysqli_connect("localhost","root","","test");
+require('include/dbconnection.php');
 // if (strlen($_SESSION['aid']==0)) {
 //   header('location:logout.php');
 //   } else{

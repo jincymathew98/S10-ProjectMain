@@ -1,5 +1,5 @@
 <?php
-$con=mysqli_connect("localhost","root","","test");
+include('include/dbconnection.php');
 session_start();
 if(!empty($_SESSION['email']))
  {

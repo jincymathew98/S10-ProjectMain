@@ -2,7 +2,7 @@
 //print_r($_GET);
 //die();
 session_start();
-$con=mysqli_connect("localhost","root","","test")or die("Couldn't connect to server");
+include('includes/config.php');
 
 
     $name = $_POST["cardname"];

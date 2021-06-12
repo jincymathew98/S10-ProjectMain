@@ -3,7 +3,7 @@
 	session_start();
 	
 	
-	require 'Connection.php';
+	require 'include/Connection.php';
 	
 	
 	if(isset($_POST["btnadd"]))

@@ -2,7 +2,7 @@
 
 
 
-$con=mysqli_connect("localhost","root","","test");
+include("dbconnection.php");
 
 	$uname = $_POST["email"];
 	$pwrd = $_POST["password"];
