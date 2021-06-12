@@ -34,13 +34,24 @@ if($res)
 
     {
       
+
+        ?>
+        <script>alert("Approved order");  
+        location.href="invoices.php";</script>
+        <?php
+           
      // header("location:../admin_approve_ebook.php");
-      echo'<script>alert("Approved ")</script>';
+    //   echo'<script>alert("Approved ")</script>';
      //header("location:admin.php");
   }
 
     else{
-        echo 'ERRORR!!!!';
+
+        ?>
+     <script>alert("Error occured in approval");  
+     location.href="admin.php";</script>
+     <?php
+        
    }
 
 }

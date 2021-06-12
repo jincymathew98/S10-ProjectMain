@@ -33,13 +33,23 @@ $con=mysqli_connect("localhost","root","","test")or die("Couldn't connect to ser
 if($res)
 
     {
-        echo'<script>alert("Rejected ")</script>';
+
+        ?>
+        <script>alert("Order rejected");  
+        location.href="invoices.php";</script>
+        <?php
+           
+        // echo'<script>alert("Rejected ")</script>';
      //header("location:../admin_approve_ebook.php");
       //echo"<div id ='out'>Reject</div>";
   }
 
     else{
-        echo 'ERRORR!!!!';
+        ?>
+     <script>alert("Error occurred");  
+     location.href="admin.php";</script>
+     <?php
+        
    }
 
 }
