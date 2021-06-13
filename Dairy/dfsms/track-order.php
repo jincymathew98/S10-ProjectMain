@@ -1,9 +1,9 @@
 <?php
 session_start();
 include_once 'includes/config.php';
-if(!empty($_SESSION['email']))
+if(!empty($_GET['oid']))
  {
-     $oid=$_SESSION['email']; 
+     $oid=$_GET['oid']; 
 ?>
 <script language="javascript" type="text/javascript">
 function f2()
@@ -39,7 +39,7 @@ window.print();
     </tr>
     </body>
     <?php 
-$ret = mysqli_query($con,"SELECT order_id,status FROM orders WHERE email='$oid'");
+$ret = mysqli_query($con,"SELECT order_id,status FROM orders WHERE order_id='$oid'");
 $num=mysqli_num_rows($ret);
 if($num>0)
 {

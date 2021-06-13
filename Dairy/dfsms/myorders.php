@@ -176,7 +176,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
                      } 
 					?> -->
 					
-	<td><a href="javascript:void(0);" onClick="popUpWindow('track-order.php?oid=<?php echo htmlentities($row['order_id']);?>');" title="Track order">Track order </td>
+	<td><a href="javascript:void(0);" onClick="popUpWindow('track-order.php?oid=<?php echo htmlentities($Rows['order_id']);?>');" title="Track order">Track order </td>
 
  </tr>
  <?php 

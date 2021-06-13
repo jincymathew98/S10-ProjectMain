@@ -9,7 +9,8 @@
 <script>
 function toggleuser(element){
     var row = element.parentElement.parentElement;
-    var id = row.id.split('_')[1];
+   console.log(row) 
+   var id = row.id.split('_')[1];
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function()
@@ -28,11 +29,12 @@ function toggleuser(element){
                 else 
                     button.innerHTML = "Outstock";
             } else {
+           
                 alert("something went wrong");
             }
         }
     };
-    xhttp.open("GET", "userstatus.php?id="+product_id, true);
+    xhttp.open("GET", "userstatus.php?id="+id, true);
     xhttp.send();
 
 }
@@ -290,7 +292,9 @@ function toggleuser(element){
                                     $cnt=1;
 									while($Rows = mysqli_fetch_array($Resulta)):; 
 								?>
-								<tr style="color: black">
+                                   
+								<tr  id="id_<?php echo $Rows["product_id"]; ?>" style="color: black">
+
 								
                                     <td><?php echo $cnt;?></td>
 									<td><?php echo $Rows["product_name"]; ?></td>

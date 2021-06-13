@@ -4,19 +4,19 @@ session_start();
 if (!isset($_SESSION['email']))
     die("invalid crediantials");
 
-if (!isset($_GET['ProductID']))
+if (!isset($_GET['id']))
     die("invalid inputs");
 
 // print_r($_GET);die();
 
 require_once("../../essentials.php");
-$id = $_GET['product_id'];
+$id = $_GET['id'];
 $con = connect();
 $query = "select * from tbl_products where product_id=$id";
 $result = mysqli_query($con, $query);
 
 if (!$result)
-    die("QUERY is not working");
+    die("QUERY is not working".$query);
 if (mysqli_num_rows($result) != 1)
     die("Something error");
 
