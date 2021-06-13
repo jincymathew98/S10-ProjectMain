@@ -2,9 +2,9 @@
 include("include/dbconnection.php");
 
 
-$Name = mysqli_real_escape_string($con, $_POST['name']);
-$Email = mysqli_real_escape_string($con, $_POST['email']);
-$PhnNo = mysqli_real_escape_string($con, $_POST['phone']);
+$Name =  $_POST['name'];
+$Email =$_POST['email'];
+$PhnNo = $_POST['phone'];
 $CPword = md5(mysqli_real_escape_string($con, $_POST['psw-repeat']));
 //$usertype = mysqli_real_escape_string($con, $_POST['exist']);
 $submit = mysqli_real_escape_string($con, $_POST['btn']);
@@ -39,7 +39,7 @@ if(mysqli_query($con,$sql))
      
      ?>
      <script>alert("User added successfully by the admin");  
-     location.href="../../LOGIN/log/login.html";</script>
+     location.href="admin.php";</script>
      <?php
         
 }

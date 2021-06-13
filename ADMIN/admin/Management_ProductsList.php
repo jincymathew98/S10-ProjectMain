@@ -23,10 +23,10 @@ function toggleuser(element){
                 var button = row.children[row.children.length - 1].children[0];
                 button.classList.toggle("btn-success");
                 button.classList.toggle("btn-danger");
-                if (button.innerHTML == "Instock")
-                    button.innerHTML = "Outstock";
-                else 
+                if (button.innerHTML == "Outstock")
                     button.innerHTML = "Instock";
+                else 
+                    button.innerHTML = "Outstock";
             } else {
                 alert("something went wrong");
             }
@@ -149,6 +149,34 @@ function toggleuser(element){
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="vendor_management.php" aria-expanded="false"><i class="me-3 fa fa-columns"
                                     aria-hidden="true"></i><span class="hide-menu">View user</span></a></li>
+
+                                    <li class="sidebar-item"> 
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="invoices.php" aria-expanded="false">
+                                <i class="me-3 fa fa-columns" aria-hidden="true">
+                                </i>
+                                <span class="hide-menu"> Buyer Reports</span>
+                                </a>
+                                </li>
+                                
+
+                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="includes/bwdate.php" aria-expanded="false"><i class="me-3 fa fa-columns"
+                                    aria-hidden="true"></i><span class="hide-menu"> Seller Reports</span></a></li>
+
+
+
+                                   
+                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="feedback.php" aria-expanded="false"><i class="me-3 fa fa-columns"
+                                    aria-hidden="true"></i><span class="hide-menu"> View Feedbacks</span></a></li>
+
+                                   
+
+
+                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="logout.php" aria-expanded="false"><i class="me-3 fa fa-columns"
+                                    aria-hidden="true"></i><span class="hide-menu"> Logout</span></a></li>
+
                        
                         
                     </ul>
@@ -203,7 +231,7 @@ function toggleuser(element){
                     die($type);
                     if($type=='action'){
                         $operation=get_safe_value($con,$_GET['operation']);
-                        $id=get_safe_value($con,$_GET['ProductID']);
+                        $id=get_safe_value($con,$_GET['product_id']);
                         if($operation=='active'){
                             $action='Instock';
                         }else{

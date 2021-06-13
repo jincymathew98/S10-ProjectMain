@@ -105,9 +105,6 @@ if(!empty($_SESSION['email']))
                                 href="Management_Products.php" aria-expanded="false"><i class="me-3 fa fa-columns"
                                     aria-hidden="true"></i><span class="hide-menu">Add Products</span></a></li>
 
-                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="add-category.php" aria-expanded="false"><i class="me-3 fa fa-columns"
-                                    aria-hidden="true"></i><span class="hide-menu">Add Category</span></a></li>
                        
                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="Management_ProductsList.php" aria-expanded="false"><i class="me-3 fa fa-columns"

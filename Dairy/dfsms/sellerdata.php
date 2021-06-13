@@ -1,9 +1,10 @@
 <?php
+require('includes/config.php');
 session_start();
-
-
-$con=mysqli_connect("localhost","root","","test")or die("Couldn't connect to server");
-
+if(!empty($_SESSION['email']))
+ {
+     $temp=$_SESSION['email'];
+ 
 header('Content-type: application/vnd-ms-excel');
 $filename = "sellerdetails.xls";
 header("Content-Disposition:attachment;filename=\"$filename\"");
@@ -19,8 +20,8 @@ header("Content-Disposition:attachment;filename=\"$filename\"");
         <th style = "border:3px solid black">Quantity</th>
        <th style = "border:3px solid black">Amount</th>
        <th style = "border:3px solid black">Date of selling</th>
-       <th style = "border:3px solid black">Action</th>
-       
+       <!-- <th style = "border:3px solid black">Action</th>
+        -->
        
         </tr>
     </thead>
@@ -28,7 +29,7 @@ header("Content-Disposition:attachment;filename=\"$filename\"");
         <?php
         $count = 1;
 
-                $sql = "SELECT * FROM tblsell";
+                $sql = "SELECT userid,productname,quantity,productprice,dateofselling FROM tblsell where userid='$temp'";
                 $res = mysqli_query($con, $sql);
                 while($row = mysqli_fetch_assoc($res))
                 {
@@ -47,4 +48,12 @@ header("Content-Disposition:attachment;filename=\"$filename\"");
 
                 }
 
-        ?>
+            
+            }
+            else
+            {
+                header("location:../../LOGIN/log/login.html");
+            }
+            ?>
+
+        

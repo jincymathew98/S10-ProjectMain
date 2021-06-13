@@ -20,10 +20,10 @@ function toggleuser(element){
                 var button = row.children[row.children.length - 1].children[0];
                 button.classList.toggle("btn-success");
                 button.classList.toggle("btn-danger");
-                if (button.innerHTML == "Click to DeActive")
+                if (button.innerHTML == "Click to DeActivatee")
                     button.innerHTML = "Click to Activate";
                 else 
-                    button.innerHTML = "Click to DeActive";
+                    button.innerHTML = "Click to DeActivatee";
             } else {
                 alert("something went wrong");
             }
@@ -257,9 +257,7 @@ function toggleuser(element){
                              <div class="card">
                                 <div class="card-body">
                                    <h4 class="box-title"><center>USER MANAGEMENT</center> </h4>
-                                   <div align="right">
-                                   <a href="adduser.php" class="btn btn-primary">Add User</a>
-                                   </div>	
+                                  
                                 </div>
                                
                                 <div class="card-body--">

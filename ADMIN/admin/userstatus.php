@@ -10,9 +10,9 @@ if (!isset($_GET['ProductID']))
 // print_r($_GET);die();
 
 require_once("../../essentials.php");
-$id = $_GET['ProductID'];
+$id = $_GET['product_id'];
 $con = connect();
-$query = "select * from tbl_products where ProductID=$id";
+$query = "select * from tbl_products where product_id=$id";
 $result = mysqli_query($con, $query);
 
 if (!$result)
@@ -22,9 +22,9 @@ if (mysqli_num_rows($result) != 1)
 
 $row = mysqli_fetch_array($result);
 if ($row['action'] == 'Outstock')
-    $query2 = "update tbl_products set action='Instock' where ProductID=$id";
+    $query2 = "update tbl_products set action='Instock' where product_id=$id";
 else
-    $query2 = "update tbl_products set action='Outstock' where ProductID=$id";
+    $query2 = "update tbl_products set action='Outstock' where product_id=$id";
 
 mysqli_query($con, $query2);
 

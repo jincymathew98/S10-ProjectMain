@@ -96,7 +96,7 @@ if(!empty($_SESSION['email']))
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="admin.php" aria-expanded="false"><i class="me-3 far fa-clock fa-fw"
+                                href="../admin.php" aria-expanded="false"><i class="me-3 far fa-clock fa-fw"
                                     aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a></li>
 
                        
@@ -105,9 +105,6 @@ if(!empty($_SESSION['email']))
                                 href="Management_Products.php" aria-expanded="false"><i class="me-3 fa fa-columns"
                                     aria-hidden="true"></i><span class="hide-menu">Add Products</span></a></li>
 
-                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="add-category.php" aria-expanded="false"><i class="me-3 fa fa-columns"
-                                    aria-hidden="true"></i><span class="hide-menu">Add Category</span></a></li>
                        
                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="Management_ProductsList.php" aria-expanded="false"><i class="me-3 fa fa-columns"
@@ -117,24 +114,25 @@ if(!empty($_SESSION['email']))
                                 href="vendor_management.php" aria-expanded="false"><i class="me-3 fa fa-columns"
                                     aria-hidden="true"></i><span class="hide-menu"> View User</span></a></li>
 
-                                <li class="sidebar-item"> 
+                                    <li class="sidebar-item"> 
                                 <a class="sidebar-link waves-effect waves-dark sidebar-link" href="invoices.php" aria-expanded="false">
                                 <i class="me-3 fa fa-columns" aria-hidden="true">
                                 </i>
-                                <span class="hide-menu"> Reports</span>
+                                <span class="hide-menu"> Buyer Reports</span>
                                 </a>
                                 </li>
                                 
 
                                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="includes/bwdate-report-ds.php" aria-expanded="false"><i class="me-3 fa fa-columns"
-                                    aria-hidden="true"></i><span class="hide-menu"> B/W Dates</span></a></li>
+                                href="includes/bwdate.php" aria-expanded="false"><i class="me-3 fa fa-columns"
+                                    aria-hidden="true"></i><span class="hide-menu"> Seller Reports</span></a></li>
 
 
 
+                                   
                                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="viewseller.php" aria-expanded="false"><i class="me-3 fa fa-columns"
-                                    aria-hidden="true"></i><span class="hide-menu"> View</span></a></li>
+                                href="feedback.php" aria-expanded="false"><i class="me-3 fa fa-columns"
+                                    aria-hidden="true"></i><span class="hide-menu"> View Feedbacks</span></a></li>
 
                                    
 

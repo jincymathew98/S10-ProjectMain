@@ -259,23 +259,23 @@ div.container {
     <hr>
     
    <div class="container">
-    <input type="text" placeholder="Enter name" name="name" class="form-control" required>
+    <input type="text" placeholder="Enter name" name="name" class="form-control" >
     </div>
 
     <div class="container">
-    <input type="email" placeholder="Enter Email" name="email" class="form-control"  required>
+    <input type="email" placeholder="Enter Email" name="email" class="form-control"  >
     </div>
 
     <div class="container">
-    <input type="text" placeholder="Enter Phone" name="phone" class="form-control"  required>
+    <input type="text" placeholder="Enter Phone" name="phone" class="form-control"  >
     </div>
 
     <div class="container">
-    <input type="password" placeholder="Enter Password" name="psw" class="form-control"  required>
+    <input type="password" placeholder="Enter Password" name="psw" class="form-control"  >
     </div>
 
     <div class="container">
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" class="form-control"  required>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" class="form-control"  >
     </div>
   
 
