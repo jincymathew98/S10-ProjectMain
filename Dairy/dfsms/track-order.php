@@ -47,16 +47,16 @@ while($row=mysqli_fetch_array($ret))
       {
     
 
-									if ($row['status']== 1)
+									if ($row['status']== 0)
                   {  
-                           echo "<td>Status: Waiting for action </td>";
+                           echo "<td>Status: Order processing only </td>";
                      
                   }
          
              
-          elseif($row['status'] == 0)
+          elseif($row['status'] == 1)
               {
-                     echo "<td>Order confirmed</td>" ;
+                     echo "<td>Product delivered</td>" ;
               }
           else 
           {
