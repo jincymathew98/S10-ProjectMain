@@ -14,42 +14,80 @@ include('includes/config.php');
 
     $sql = "SELECT * FROM tble_payment where status = 'Active'";
     $res = mysqli_query($con, $sql);
-    if ((!empty($_POST["carename"])) || (!empty ($_POST["expmonth"])) || (!empty ($_POST["cardno"])) || (!empty($_POST["cvv"])) || (!empty($_POST["year"])))
+    
+    if (mysqli_num_rows($res)>0) //(!empty($_POST["carename"])) || (!empty ($_POST["expmonth"])) || (!empty ($_POST["cardno"])) || (!empty($_POST["cvv"])) || (!empty($_POST["year"])))
         {
-            /*if(Amount == 0)
-                {
-                    header('locatio: ../user_payment.php');
-                    echo '<script>("You didint have enough amount")</script>';
-                }
-
-            else*/
-
-           // {
+            
 
             while($row = mysqli_fetch_assoc($res))
             {
-                if($row['Amount'] != 0)
+        
+                $n = $row['name'];
+                $num = $row['card_number'];
+                // $c = $row['cvv'];
+                $mon = $row['exp_month'];
+                $year = $row['exp_year'];
+                $amnt = $row['Amount'];
+                
+                /*if(($row['Amount'] != 0) && ($row['Amount'] < $pay ))
                 {
                     $querry = "UPDATE tble_payment set Amount = Amount-$pay ";
                     $result = mysqli_query($con,$querry);
-                     
-                    ?>
-                    <script>alert("Payment Successfull");  
-                    location.href="dashboard.php";</script>
-                    <?php
-
-                    // header('location: dashboard.php');
-                    // echo '<script>("Success!!!")</script>';
+                    //header('location: ../user_payment.php');
+                    echo '<script>("Success!!!")</script>';
                 }
                 else{
-                    ?>
-                    <script>alert("Insufficient Balance");
-                     location.href="paynow.php";</script>
-                     <?php
-                }
+                    echo '<script>alert("Insufficient Balance")</script>';
+                    //header('location: ../user_payment.php');
+                    
+                }*/
             }
+            if($n == $name && $num == $no  && $mon == $month && $year == $expyear)
+                {
+                    
+                    if($amnt < '500')
+                        {   
+                            ?>
+                        <script LANGUAGE = 'javascript'> window.alert('Insufficient Amount');
+                        window.location.href ='paynow.php';</script>
+                        
+                        <?php
+                        //header('location: ../user_payment.php');
+
+                    }
+                    else 
+                    {
+                        
+                            $querry = "UPDATE tble_payment set Amount = Amount-$pay ";
+                            $result = mysqli_query($con,$querry);
+                            $temp = $_SESSION['email'];
+                             $query = "INSERT INTO tbl_penality (lid,amount,payed_date, status)
+                            values((SELECT lid from tbl_login where email = '$temp'),$pay, now(),'0')";
+
+                            $res = mysqli_query($con, $query);
+                            ?>
+                        <script LANGUAGE = 'javascript'> window.alert('Successfully Payed'); 
+                        window.location.href ='paynow.php';
+                        </script>
+                        <?php
+                        
+                    }
+                    
+                }
+                else {
+                        ?>
+                    <script>alert("Some Values May wrong Re Try Again"); 
+                        window.location.href = 'dashboard.php';
+                    </script>
+                    
+                    <?php
+                }
                 
-            //}
+                                            /*$temp = $_SESSION['username'];
+                                            $query = "INSERT INTO tbl_penality (l_id,amount,payed_date, status)
+                                                        values((SELECT l_id from login where username = '$temp'),$pay, now(),'0')";
+                                                        $res = mysqli_query($con, $query);
+                                                        header('location: ../user_payment.php');*/
           
         }
     else{

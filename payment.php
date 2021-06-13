@@ -1,7 +1,7 @@
 <?php 
 //print_r($_GET);
 //die();
-include('connection.php');
+include('includes/config.php');
 
 
     $name = $_POST["cardname"];
@@ -58,9 +58,9 @@ include('connection.php');
                         
                             $querry = "UPDATE tble_payment set Amount = Amount-$pay ";
                             $result = mysqli_query($con,$querry);
-                            $temp = $_SESSION['username'];
-                             $query = "INSERT INTO tbl_penality (l_id,amount,payed_date, status)
-                            values((SELECT l_id from login where username = '$temp'),$pay, now(),'0')";
+                            $temp = $_SESSION['email'];
+                             $query = "INSERT INTO tbl_penality (lid,amount,payed_date, status)
+                            values((SELECT lid from tbl_login where email = '$temp'),$pay, now(),'0')";
 
                             $res = mysqli_query($con, $query);
                             ?>
