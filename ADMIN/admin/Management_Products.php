@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+include('include/dbconnection.php');
+session_start();
+if(!empty($_SESSION['email']))
+ {
+     $temp=$_SESSION['email'];
+ ?><!DOCTYPE html>
 <html dir="ltr" lang="en">
 
 <head>
@@ -238,7 +244,7 @@
 							
 		<div class="form-group">
 			<label for="ProductImage">Product Image:</label>
-			     <input type="file" name="ProductImage" accept="image/x-png, image/gif, image/jpeg">
+			     <input type="file" name="ProductImage" accept="image/x-png, image/gif, image/jpg">
 		</div>
 							
 							<div class="form-group">
@@ -290,6 +296,15 @@
     <script src="js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.js"></script>
+
+    <?php
+    }
+    else
+    {
+        header("location:LOGIN/log/login.html");
+    }
+    ?>
+
 </body>
 
 </html>

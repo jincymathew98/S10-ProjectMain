@@ -291,7 +291,7 @@ function toggleuser(element){
                                                <td>
                                                 <?php
                                                 if($row['status']==1){ ?>
-                                                    <button class='btn btn-danger' onclick="toggleuser(this)">Click to DeActive</button>
+                                                    <button class='btn btn-danger' onclick="toggleuser(this)">Click to DeActivate</button>
                                                 <?php }
                                                 else
                                                 { ?>

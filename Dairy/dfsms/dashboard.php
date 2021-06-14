@@ -3,9 +3,10 @@ session_start();
 //error_reporting(0);
 include('includes/config.php');
 
-// if (strlen($_SESSION['aid']==0)) {
-//   header('location:logout.php');
-//   } else{ ?>
+if(!empty($_SESSION['email']))
+ {
+     $temp=$_SESSION['email'];
+ ?> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -237,6 +238,14 @@ include_once('includes/sidebar.php');
 	<script src="dist/js/irregular-data-series.js"></script>
     <script src="dist/js/init.js"></script>
 	
+    <?php
+    }
+    else
+    {
+        header("location:../../LOGIN/log/login.html");
+    }
+    ?>
+
 </body>
 
 </html>

@@ -16,7 +16,7 @@ $emailid=$_POST['emailid'];
 $mobileno=$_POST['mobilenumber'];   
 $query=mysqli_query($con,"update tbl_reg set name='$adminname',phno='$mobileno',email='$emailid' where email='$adminid'"); 
 if($query){
-echo "<script>alert('User details updated successfully.');</script>";   
+echo "<script>alert('User details updated successfully.');</script>";  mysqli_error($con); 
 echo "<script>window.location.href='profile.php'</script>";
 } 
 }
