@@ -35,7 +35,7 @@ window.print();
     </tr>
     <tr height="30">
       <td  class="fontkink1"><b>order Id:</b></td>
-      <td  class="fontkink"><?php echo $oid;?></td>
+      <td  class="fontkink"><?php  echo(rand() . "<br>"); ?></td>
     </tr>
     </body>
     <?php 
