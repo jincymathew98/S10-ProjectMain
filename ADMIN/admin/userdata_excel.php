@@ -12,6 +12,8 @@ header("Content-Disposition:attachment;filename=\"$filename\"");
 
 <table class="table table-bordered">
     <thead>
+    <caption>SELLER REPORTS</caption>
+    <tr>
         <th style = "border:3px solid black">No</th>
         <th style = "border:3px solid black">Name</th>
         <th style = "border:3px solid black">Email</th>

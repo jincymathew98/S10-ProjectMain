@@ -12,11 +12,11 @@ if(isset($_POST['update']))
  $adminid=$_SESSION['email'];   
 //Getting Post Values
 $adminname=$_POST['adminname'];  
-$emailid=$_POST['emailid'];  
+// $emailid=$_POST['emailid'];  
 $mobileno=$_POST['mobilenumber'];   
-$query=mysqli_query($con,"update tbl_reg set name='$adminname',phno='$mobileno',email='$emailid' where email='$adminid'"); 
+$query=mysqli_query($con,"update tbl_reg set name='$adminname',phno='$mobileno' where email='$adminid'"); 
 if($query){
-echo "<script>alert('User details updated successfully.');</script>";  mysqli_error($con); 
+echo "<script>alert('User details updated successfully.');</script>"; 
 echo "<script>window.location.href='profile.php'</script>";
 } 
 }
@@ -101,7 +101,7 @@ while($row=mysqli_fetch_array($query)){
 <div class="form-row">
 <div class="col-md-6 mb-10">
 <label for="validationCustom03">Email id</label>
-<input type="text" class="form-control" id="validationCustom03" value="<?php echo $row['email'];?>" name="emailid" required>
+<input type="text" class="form-control" id="validationCustom03" value="<?php echo $row['email'];?>" name="emailid" disabled>
 <div class="invalid-feedback">Please provide a valid  Email id.</div>
 </div>
 </div>

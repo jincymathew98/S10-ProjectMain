@@ -6,8 +6,7 @@ require('../include/dbconnection.php');
 //$id=$_GET['id'];
 
  
- //$sql = "UPDATE ebook_table set status = 'Approved' WHERE 
- //(SELECT l.l_id, e.l_id from login l, ebook_table e WHERE e.l_id = l.l_id))";
+ 
  
  if(isset($_REQUEST['x']))
 {
