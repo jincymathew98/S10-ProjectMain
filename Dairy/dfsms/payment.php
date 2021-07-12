@@ -93,7 +93,7 @@ include('includes/config.php');
     else{
         ?>
         <script>
-        alert("Fiels is empty");
+        alert("Field is empty");
         </script>
         <?php
     }

@@ -125,7 +125,7 @@ include_once('includes/sidebar.php');
                                         </div> 
                                         <div class ="form-group">
                                             <label>CVV</label>
-                                            <input type ="text" class = "form-control" name="cvv" autocomplete="off" placeholder = "Enter CVV" required>
+                                            <input type ="password" class = "form-control" name="cvv" autocomplete="off" placeholder = "Enter CVV" required>
                                         </div> 
                                         <div class ="form-group">
                                             <label>Amount</label>
