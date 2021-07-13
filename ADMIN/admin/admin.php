@@ -172,77 +172,80 @@ if(!empty($_SESSION['email']))
                     
                 </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
+           
             <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Sales chart -->
-                <!-- ============================================================== -->
+               
+                <?php
+$query=mysqli_query($con,"select product_id from tbl_products");
+$listedcat=mysqli_num_rows($query);
+?>
                 <div class="row">
                     <!-- Column -->
                     <div class="col-sm-6">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Daily Sales</h4>
-                                <div class="text-end">
-                                    <h2 class="font-light mb-0"><i class="ti-arrow-up text-success"></i> $120</h2>
-                                    <span class="text-muted">Todays Income</span>
-                                </div>
-                                <span class="text-success">80%</span>
-                                <div class="progress">
-                                    <div class="progress-bar bg-success" role="progressbar"
-                                        style="width: 80%; height: 6px;" aria-valuenow="25" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
+                            <div class="text-center">
+<span class="d-block display-4 text-dark mb-5"><?php echo $listedcat;?></span>
+<h4 class="card-title">Listed products</h4>
+</div>
+                               
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
+                    
+                    <?php
+$query=mysqli_query($con,"select reg_id from tbl_reg");
+$listedcat=mysqli_num_rows($query);
+?>
+                   
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                            <div class="text-center">
+<span class="d-block display-4 text-dark mb-5"><?php echo $listedcat;?></span>
+<h4 class="card-title">Total Users</h4>
+</div>
+                               
+                            </div>
+                        </div>
+                    </div>
+ </div>
+                <?php
+$query=mysqli_query($con,"select email from orders");
+$listedcat=mysqli_num_rows($query);
+?>
+  <div class="row">
                     <!-- Column -->
                     <div class="col-sm-6">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Weekly Sales</h4>
-                                <div class="text-end">
-                                    <h2 class="font-light mb-0"><i class="ti-arrow-up text-info"></i> $5,000</h2>
-                                    <span class="text-muted">Todays Income</span>
-                                </div>
-                                <span class="text-info">30%</span>
-                                <div class="progress">
-                                    <div class="progress-bar bg-info" role="progressbar"
-                                        style="width: 30%; height: 6px;" aria-valuenow="25" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
+                            <div class="text-center">
+<span class="d-block display-4 text-dark mb-5"><?php echo $listedcat;?></span>
+<h4 class="card-title">Total Sales </h4>
+</div>
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
-                </div>
-                <!-- ============================================================== -->
-                <!-- Sales chart -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <!-- column -->
-                    <div class="col-sm-12">
+                    
+                <?php
+$query=mysqli_query($con,"select userid from tblsell");
+$listedcat=mysqli_num_rows($query);
+?>
+ <div class="col-sm-6">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Revenue Statistics</h4>
-                                <div class="flot-chart">
-                                    <div class="flot-chart-content " id="flot-line-chart"
-                                        style="padding: 0px; position: relative;">
-                                        <canvas class="flot-base w-100" height="400"></canvas>
-                                    </div>
-                                </div>
+                            <div class="text-center">
+<span class="d-block display-4 text-dark mb-5"><?php echo $listedcat;?></span>
+<h4 class="card-title">Total Users</h4>
+</div>
+                               
                             </div>
                         </div>
                     </div>
-                    <!-- column -->
-                </div>
-                <!-- ============================================================== -->
+ </div>
+
+  
+                   
                 
     <!-- ============================================================== -->
     <!-- All Jquery -->
