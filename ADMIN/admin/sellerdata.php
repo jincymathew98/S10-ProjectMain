@@ -12,6 +12,8 @@ header("Content-Disposition:attachment;filename=\"$filename\"");
 
 <table class="table table-bordered">
     <thead>
+        <center>
+    <h6 style="color:Tomato;"><B>SELLER REPORTS<B></h6>
         <th style = "border:3px solid black">No</th>
         <th style = "border:3px solid black">Email</th>
         <th style = "border:3px solid black">ProductName</th>
@@ -19,8 +21,7 @@ header("Content-Disposition:attachment;filename=\"$filename\"");
         <th style = "border:3px solid black">Quantity</th>
        <th style = "border:3px solid black">Amount</th>
        <th style = "border:3px solid black">Date of selling</th>
-       <th style = "border:3px solid black">Action</th>
-       
+      
        
         </tr>
     </thead>

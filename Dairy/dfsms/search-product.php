@@ -76,8 +76,8 @@ include_once('includes/sidebar.php');
                                                     <th>Product</th>
                                                     <th>Company</th>
                                                     <th>Pricing</th>
-                                                    <th>Quantity</th>
                                                     <th>Action</th>
+                                                    
                                                     
                                                 </tr>
                                             </thead>
@@ -96,9 +96,9 @@ while($row=mysqli_fetch_array($query))
 <td><?php echo $row['ProductBrand'];?></td>
 <td><?php echo $row['product_price'];?></td>
 
-<td><input type="text" class="product-quantity" name="quantity" value="1" size="2" /></td>
+
 <td>
-<button id="addItem" class="btn btn-success btn-md">Available</button>
+<!-- <button id="addItem" class="btn btn-success btn-md">Available</button> -->
 <a href="dashboard.php">Would you like to buy??</a>
 </td>
 </tr>

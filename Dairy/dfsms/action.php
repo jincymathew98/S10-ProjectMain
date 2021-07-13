@@ -109,7 +109,7 @@ if(isset($_POST["action"]) && isset($_POST["action"])=="order")
 	
 	$data = "";
 	
-	$insert_stmt=$db->prepare("INSERT INTO orders(username,
+	$insert_stmt=$db->prepare("INSERT INTO orders(name,
 												  email,
 												  phone, 
 												  address,
@@ -117,21 +117,15 @@ if(isset($_POST["action"]) && isset($_POST["action"])=="order")
 												  products,
 												  paid_amount) 
 											VALUES
-												 (:uname,
-												  :email,
-												  :phone,
-											      :address,
-												  :pmode,
-												  :products,
-												  :pamount)"); 					
-	$insert_stmt->bindParam(":uname",$name);	
-	$insert_stmt->bindParam(":email",$email);	
-	$insert_stmt->bindParam(":phone",$phone);	
-	$insert_stmt->bindParam(":address",$address);	 
-	$insert_stmt->bindParam(":pmode",$pmode);	
-	$insert_stmt->bindParam(":products",$products);	
-	$insert_stmt->bindParam(":pamount",$grand_total);	
-	//$insert_stmt->execute();
+												 ('$name',
+												  '$email',
+												  '$phone',
+											      '$address',
+												  '$pmode',
+												  '$products',
+												  '$grand_total')"); 					
+	
+	$insert_stmt->execute();
 	
 	$data.='<div class="text-center">
 				<h1 class="display-4 mt-2 text-danger">Thank You!</h1>
@@ -141,8 +135,9 @@ if(isset($_POST["action"]) && isset($_POST["action"])=="order")
 				<h4>Your E-mail : '.$email.' </h4>			
 				<h4>Your Phone : '.$phone.'  </h4>			
 				<h4>Total Amount Paid : '.number_format($grand_total,2).' </h4>			
-				<h4>Payment Mode : '.$pmode.' </h4>			
+				<h4>Payment Mode : '.$pmode.' </h4>		
 				<a href="paynow.php" class="btn btn-danger">Pay Now</a>	
+				
 			</div>';
 			
 	echo $data;		

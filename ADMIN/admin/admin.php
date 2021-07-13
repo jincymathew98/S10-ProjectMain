@@ -221,7 +221,7 @@ $listedcat=mysqli_num_rows($query);
                             <div class="card-body">
                             <div class="text-center">
 <span class="d-block display-4 text-dark mb-5"><?php echo $listedcat;?></span>
-<h4 class="card-title">Total Sales </h4>
+<h4 class="card-title">Total Orders </h4>
 </div>
                             </div>
                         </div>
@@ -236,7 +236,7 @@ $listedcat=mysqli_num_rows($query);
                             <div class="card-body">
                             <div class="text-center">
 <span class="d-block display-4 text-dark mb-5"><?php echo $listedcat;?></span>
-<h4 class="card-title">Total Users</h4>
+<h4 class="card-title">Total Sellers</h4>
 </div>
                                
                             </div>

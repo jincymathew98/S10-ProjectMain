@@ -135,7 +135,7 @@ include_once('includes/sidebar.php');
 					<input type="hidden" class="pcode" value="<?php echo $row['Description']; ?>">
 					<button id="addItem" class="btn btn-success btn-md">Add to Cart</button>
     
-                <a class="btn btn-danger" href="paynow.php" role="button">Buy Now</a>
+                <!-- <a class="btn btn-danger" href="paynow.php" role="button">Buy Now</a> -->
               
           <!-- <a href="productdetails.php"><U>Send your feedback </U></a> -->
 				</form>

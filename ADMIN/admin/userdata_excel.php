@@ -12,8 +12,9 @@ header("Content-Disposition:attachment;filename=\"$filename\"");
 
 <table class="table table-bordered">
     <thead>
-    <caption>SELLER REPORTS</caption>
-    <tr>
+    <center>
+    <h6 style="color:Tomato;"><B>BUYER REPORTS<B></h6>
+   
         <th style = "border:3px solid black">No</th>
         <th style = "border:3px solid black">Name</th>
         <th style = "border:3px solid black">Email</th>
@@ -22,7 +23,7 @@ header("Content-Disposition:attachment;filename=\"$filename\"");
        <th style = "border:3px solid black">Products</th>
        <th style = "border:3px solid black">Amount</th>
        
-        </tr>
+       
     </thead>
 
         <?php

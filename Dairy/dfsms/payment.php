@@ -67,7 +67,7 @@ include('includes/config.php');
                             $res = mysqli_query($con, $query);
                             ?>
                         <script LANGUAGE = 'javascript'> window.alert('Successfully Payed'); 
-                        window.location.href ='paynow.php';
+                        window.location.href ='dashboard.php';
                         </script>
                         <?php
                         
@@ -77,7 +77,7 @@ include('includes/config.php');
                 else {
                         ?>
                     <script>alert("Some Values May wrong Re Try Again"); 
-                        window.location.href = 'dashboard.php';
+                        window.location.href = 'paynow.php';
                     </script>
                     
                     <?php
